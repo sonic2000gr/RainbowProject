@@ -21,7 +21,7 @@ void main(void) {
     // Configure P2, BIT1 to receive interrupts (IORQ signal)
 
     P2IE |= BIT1;    // Enable interrupt on BIT1. This is a signal from Z80 to read a character
-    // P2REN |= BIT1;   // Enable pullup resistor on P1.1. Probably not needed
+    //P2REN |= BIT1;   // Enable pullup resistor on P1.1. Probably not needed for final circuit
     P2IES |= BIT1;   // Interrupt will occur on High to Low transition (IORQ is active low)
     P2IFG &= ~BIT1;  // Clear the interrupt flag
 
@@ -39,8 +39,33 @@ void main(void) {
 #pragma vector=PORT2_VECTOR
 __interrupt void readPort() {
     char letter = P1IN;
+    int column, row;
     if (letter >= 192) {
         // process as command
+    	if  (letter<=223) {
+          letter = letter - 192;
+          column = letter & 15;
+          row = letter >> 4;
+          setPositionLCD(row, column);
+    	} else {
+    	  switch(letter) {
+    	    case 224: // clear screen
+    		    clearLCD();
+    		    break;
+    	    case 225: //blank
+    		    blankLCD();
+    		    break;
+    	    case 226: //restore
+    		    restoreLCD();
+    		    break;
+    	    case 227: //show cursor
+    		    showCursorLCD(TRUE);
+    	        break;
+    	    case 228: //hide cursor
+    		    showCursorLCD(FALSE);
+         	    break;
+    	  }
+    	}
     } else
        sendData(letter);
 
