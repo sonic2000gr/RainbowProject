@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Device:C_Small
+# Device_C_Small
 #
-DEF Device:C_Small C 0 10 N N 1 F N
+DEF Device_C_Small C 0 10 N N 1 F N
 F0 "C" 10 70 50 H V L CNN
-F1 "Device:C_Small" 10 -80 50 H V L CNN
+F1 "Device_C_Small" 10 -80 50 H V L CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -19,11 +19,11 @@ X ~ 2 0 -100 80 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# IODecoder-rescue:74LS138
+# IODecoder-rescue_74LS138
 #
-DEF IODecoder-rescue:74LS138 U 0 40 Y Y 1 F N
+DEF IODecoder-rescue_74LS138 U 0 40 Y Y 1 F N
 F0 "U" 100 500 50 H V C CNN
-F1 "IODecoder-rescue:74LS138" 150 -549 50 H V C CNN
+F1 "IODecoder-rescue_74LS138" 150 -549 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -47,11 +47,11 @@ X O6 9 600 -250 300 L 50 50 1 1 O V
 ENDDRAW
 ENDDEF
 #
-# IODecoder-rescue:GND
+# IODecoder-rescue_GND
 #
-DEF IODecoder-rescue:GND #PWR 0 0 Y Y 1 F P
+DEF IODecoder-rescue_GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "IODecoder-rescue:GND" 0 -150 50 H V C CNN
+F1 "IODecoder-rescue_GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -60,11 +60,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# IODecoder-rescue:VCC
+# IODecoder-rescue_VCC
 #
-DEF IODecoder-rescue:VCC #PWR 0 0 Y Y 1 F P
+DEF IODecoder-rescue_VCC #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -150 50 H I C CNN
-F1 "IODecoder-rescue:VCC" 0 150 50 H V C CNN
+F1 "IODecoder-rescue_VCC" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

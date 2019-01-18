@@ -26,9 +26,9 @@ F 3 "" H 3950 2250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7450 7500 0    60   ~ 0
-Address Decoder
+IO Decoder
 Text Notes 8350 7650 0    60   ~ 0
-11/12/2017
+18/01/2019
 Text Notes 10600 7650 0    60   ~ 0
 1.0
 $Comp
@@ -64,8 +64,6 @@ F 3 "" H 3950 3450 50  0001 C CNN
 	1    3950 3450
 	1    0    0    -1  
 $EndComp
-Text GLabel 2450 3600 0    60   Input ~ 0
-Z80_~REFSH
 Wire Wire Line
 	3950 4350 3950 4600
 Wire Wire Line
@@ -83,8 +81,6 @@ Wire Wire Line
 Wire Wire Line
 	2600 3800 2400 3800
 Wire Wire Line
-	2450 3600 3350 3600
-Wire Wire Line
 	2400 3250 2500 3250
 Wire Wire Line
 	2500 3250 2500 3200
@@ -96,15 +92,15 @@ Wire Wire Line
 	2550 3400 2550 3300
 Wire Wire Line
 	2550 3300 3350 3300
-Text GLabel 5100 3100 2    60   Input ~ 0
+Text GLabel 5100 3300 2    60   Input ~ 0
 LCD_~CS
 Wire Wire Line
 	4550 3100 5100 3100
-Text GLabel 5100 3300 2    60   Input ~ 0
+Text GLabel 5100 3100 2    60   Input ~ 0
 KBD_~CS
-Text GLabel 5100 3500 2    60   Input ~ 0
-SPK_~CS
 Text GLabel 5100 3700 2    60   Input ~ 0
+SPK_~CS
+Text GLabel 5100 3500 2    60   Input ~ 0
 RPI_~CS
 Wire Wire Line
 	4550 3200 5000 3200
@@ -153,4 +149,11 @@ F 3 "" H 3600 2800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3600 2700 3600 2800
+Wire Wire Line
+	3350 3600 3200 3600
+Wire Wire Line
+	3200 3600 3200 2500
+Wire Wire Line
+	3200 2500 3600 2500
+Connection ~ 3600 2500
 $EndSCHEMATC
