@@ -1,39 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:switches
-LIBS:relays
-LIBS:motors
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:ControlBusLEDs-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -48,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 74HC240 U2
+L ControlBusLEDs-rescue:74HC240 U2
 U 1 1 5A1D0470
 P 4800 4800
 F 0 "U2" H 5100 4150 50  0000 L CNN
@@ -59,7 +26,7 @@ F 3 "" H 4800 4800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L Device:R R8
 U 1 1 5A1D062F
 P 5800 5000
 F 0 "R8" V 5880 5000 50  0001 C CNN
@@ -70,7 +37,7 @@ F 3 "" H 5800 5000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R7
+L Device:R R7
 U 1 1 5A1D06E3
 P 5800 4850
 F 0 "R7" V 5880 4850 50  0001 C CNN
@@ -81,7 +48,7 @@ F 3 "" H 5800 4850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R6
+L Device:R R6
 U 1 1 5A1D06F4
 P 5800 4700
 F 0 "R6" V 5880 4700 50  0001 C CNN
@@ -92,7 +59,7 @@ F 3 "" H 5800 4700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R5
+L Device:R R5
 U 1 1 5A1D0705
 P 5800 4550
 F 0 "R5" V 5880 4550 50  0001 C CNN
@@ -103,7 +70,7 @@ F 3 "" H 5800 4550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R4
+L Device:R R4
 U 1 1 5A1D0718
 P 5800 4400
 F 0 "R4" V 5880 4400 50  0001 C CNN
@@ -114,7 +81,7 @@ F 3 "" H 5800 4400 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R3
+L Device:R R3
 U 1 1 5A1D0729
 P 5800 4250
 F 0 "R3" V 5880 4250 50  0001 C CNN
@@ -125,7 +92,7 @@ F 3 "" H 5800 4250 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R2
+L Device:R R2
 U 1 1 5A1D073A
 P 5800 4100
 F 0 "R2" V 5880 4100 50  0001 C CNN
@@ -136,7 +103,7 @@ F 3 "" H 5800 4100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R R1
+L Device:R R1
 U 1 1 5A1D074B
 P 5800 3950
 F 0 "R1" V 5880 3950 50  0001 C CNN
@@ -147,7 +114,7 @@ F 3 "" H 5800 3950 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED_ALT M1
+L Device:LED_ALT M1
 U 1 1 5A1D07CB
 P 7200 5000
 F 0 "M1" H 7200 5100 50  0000 C CNN
@@ -158,7 +125,7 @@ F 3 "" H 7200 5000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT HALT1
+L Device:LED_ALT HALT1
 U 1 1 5A1D08CA
 P 7200 4750
 F 0 "HALT1" H 7200 4850 50  0000 C CNN
@@ -169,7 +136,7 @@ F 3 "" H 7200 4750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT RD1
+L Device:LED_ALT RD1
 U 1 1 5A1D08F0
 P 7200 4500
 F 0 "RD1" H 7200 4600 50  0000 C CNN
@@ -180,7 +147,7 @@ F 3 "" H 7200 4500 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT WR1
+L Device:LED_ALT WR1
 U 1 1 5A1D091B
 P 7200 4250
 F 0 "WR1" H 7200 4350 50  0000 C CNN
@@ -191,7 +158,7 @@ F 3 "" H 7200 4250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT MREQ1
+L Device:LED_ALT MREQ1
 U 1 1 5A1D0947
 P 7200 4000
 F 0 "MREQ1" H 7200 4100 50  0000 C CNN
@@ -202,7 +169,7 @@ F 3 "" H 7200 4000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT IORQ1
+L Device:LED_ALT IORQ1
 U 1 1 5A1D0976
 P 7200 3750
 F 0 "IORQ1" H 7200 3850 50  0000 C CNN
@@ -213,7 +180,7 @@ F 3 "" H 7200 3750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT BUSRQ1
+L Device:LED_ALT BUSRQ1
 U 1 1 5A1D09A8
 P 7200 3500
 F 0 "BUSRQ1" H 7200 3600 50  0000 C CNN
@@ -224,7 +191,7 @@ F 3 "" H 7200 3500 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED_ALT BUSACK1
+L Device:LED_ALT BUSACK1
 U 1 1 5A1D0B11
 P 7200 3250
 F 0 "BUSACK1" H 7200 3350 50  0000 C CNN
@@ -235,7 +202,7 @@ F 3 "" H 7200 3250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L VCC #PWR01
+L power:VCC #PWR01
 U 1 1 5A2D11F3
 P 4800 3550
 F 0 "#PWR01" H 4800 3400 50  0001 C CNN
@@ -246,7 +213,7 @@ F 3 "" H 4800 3550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L power:GND #PWR02
 U 1 1 5A2D128B
 P 4800 5800
 F 0 "#PWR02" H 4800 5550 50  0001 C CNN
@@ -277,7 +244,7 @@ Text Notes 8200 7650 0    60   ~ 0
 Text Notes 10600 7650 0    60   ~ 0
 1.01
 $Comp
-L Conn_01x10 J1
+L conn:Conn_01x10 J1
 U 1 1 5A324482
 P 2800 3500
 F 0 "J1" H 2800 4000 50  0000 C CNN
@@ -288,7 +255,7 @@ F 3 "" H 2800 3500 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C C1
+L Device:C C1
 U 1 1 5A32538A
 P 5150 3800
 F 0 "C1" H 5175 3900 50  0000 L CNN
@@ -402,57 +369,57 @@ Wire Wire Line
 Connection ~ 7750 4750
 Connection ~ 7750 5000
 Wire Wire Line
-	4800 3550 4800 4100
+	4800 3550 4800 3650
 Wire Wire Line
-	7750 3250 7750 5600
+	7750 3250 7750 3500
 Wire Wire Line
-	7750 5600 4100 5600
+	7750 5600 4800 5600
 Wire Wire Line
-	4800 5500 4800 5800
+	4800 5500 4800 5600
 Connection ~ 4800 5600
 Wire Wire Line
-	4300 5600 4300 5200
+	4300 5600 4300 5300
 Connection ~ 4300 5300
 Wire Wire Line
-	3150 4200 4000 4200
+	3150 4200 3900 4200
 Wire Wire Line
 	4000 4200 4000 4300
 Wire Wire Line
 	4000 4300 4300 4300
 Wire Wire Line
-	3150 4350 3900 4350
+	3150 4350 3800 4350
 Wire Wire Line
 	3900 4350 3900 4400
 Wire Wire Line
 	3900 4400 4300 4400
 Wire Wire Line
-	3150 4500 4300 4500
+	3150 4500 3700 4500
 Wire Wire Line
-	3150 4650 3900 4650
+	3150 4650 3600 4650
 Wire Wire Line
 	3900 4650 3900 4600
 Wire Wire Line
 	3900 4600 4300 4600
 Wire Wire Line
-	3150 4800 3900 4800
+	3150 4800 3500 4800
 Wire Wire Line
 	3900 4800 3900 4700
 Wire Wire Line
 	3900 4700 4300 4700
 Wire Wire Line
-	3150 4950 4000 4950
+	3150 4950 3400 4950
 Wire Wire Line
 	4000 4950 4000 4800
 Wire Wire Line
 	4000 4800 4300 4800
 Wire Wire Line
-	3150 5100 4050 5100
+	3150 5100 3300 5100
 Wire Wire Line
 	4050 5100 4050 4900
 Wire Wire Line
 	4050 4900 4300 4900
 Wire Wire Line
-	3150 5250 4150 5250
+	3150 5250 3200 5250
 Wire Wire Line
 	4150 5250 4150 5000
 Wire Wire Line
@@ -513,7 +480,7 @@ Wire Wire Line
 	5150 3650 4800 3650
 Connection ~ 4800 3650
 $Comp
-L GND #PWR03
+L power:GND #PWR03
 U 1 1 5A32552E
 P 5150 4100
 F 0 "#PWR03" H 5150 3850 50  0001 C CNN
@@ -525,4 +492,46 @@ F 3 "" H 5150 4100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5150 3950 5150 4100
+Wire Wire Line
+	7750 3500 7750 3750
+Wire Wire Line
+	7750 3750 7750 4000
+Wire Wire Line
+	7750 4000 7750 4250
+Wire Wire Line
+	7750 4250 7750 4500
+Wire Wire Line
+	7750 4500 7750 4750
+Wire Wire Line
+	7750 4750 7750 5000
+Wire Wire Line
+	7750 5000 7750 5600
+Wire Wire Line
+	4800 5600 4300 5600
+Wire Wire Line
+	4800 5600 4800 5800
+Wire Wire Line
+	4300 5300 4300 5200
+Wire Wire Line
+	3200 5250 4150 5250
+Wire Wire Line
+	3300 5100 4050 5100
+Wire Wire Line
+	3400 4950 4000 4950
+Wire Wire Line
+	3500 4800 3900 4800
+Wire Wire Line
+	3600 4650 3900 4650
+Wire Wire Line
+	3700 4500 4300 4500
+Wire Wire Line
+	3800 4350 3900 4350
+Wire Wire Line
+	3900 4200 4000 4200
+Wire Wire Line
+	4300 5600 4100 5600
+Wire Wire Line
+	4800 4000 4800 4100
+Wire Wire Line
+	4800 3650 4800 4000
 $EndSCHEMATC

@@ -1,39 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:switches
-LIBS:relays
-LIBS:motors
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:Z80Mainboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -48,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 6116 U3
+L memory:6116 U3
 U 1 1 5A2E5CEB
 P 9150 4500
 F 0 "U3" H 8750 5300 50  0000 C CNN
@@ -59,7 +26,7 @@ F 3 "" H 9150 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L power:VCC #PWR?
 U 1 1 5A2E60EC
 P 6150 950
 F 0 "#PWR?" H 6150 800 50  0001 C CNN
@@ -76,7 +43,7 @@ Text Notes 8300 7650 0    60   ~ 0
 Text Notes 10650 7650 0    60   ~ 0
 1.1
 $Comp
-L 27C64 U1
+L memory:27C64 U1
 U 1 1 5A2E5C26
 P 9150 2350
 F 0 "U1" H 8900 3350 50  0000 C CNN
@@ -119,7 +86,7 @@ Entry Bus Bus
 Entry Bus Bus
 	10350 4500 10450 4600
 $Comp
-L 74LS138 U2
+L Z80Mainboard-rescue:74LS138 U2
 U 1 1 5A2E603E
 P 6150 3350
 F 0 "U2" H 6250 3850 50  0000 C CNN
@@ -130,7 +97,7 @@ F 3 "" H 6150 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Z80CPU U4
+L Zilog:Z80CPU U4
 U 1 1 5A65CBFC
 P 2850 3300
 F 0 "U4" H 2300 4700 50  0000 L CNN
@@ -365,7 +332,7 @@ A9
 Text Label 8300 4800 0    60   ~ 0
 A10
 $Comp
-L CP C1
+L Device:CP C1
 U 1 1 5A673B2B
 P 850 1300
 F 0 "C1" H 875 1400 50  0000 L CNN
@@ -376,7 +343,7 @@ F 3 "" H 850 1300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A67423A
 P 2850 5000
 F 0 "#PWR?" H 2850 4750 50  0001 C CNN
@@ -387,7 +354,7 @@ F 3 "" H 2850 5000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A674675
 P 850 1700
 F 0 "#PWR?" H 850 1450 50  0001 C CNN
@@ -398,7 +365,7 @@ F 3 "" H 850 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C2
+L Device:C_Small C2
 U 1 1 5A6749A1
 P 5800 2550
 F 0 "C2" H 5810 2620 50  0000 L CNN
@@ -409,7 +376,7 @@ F 3 "" H 5800 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A674AC1
 P 5800 2700
 F 0 "#PWR?" H 5800 2450 50  0001 C CNN
@@ -420,7 +387,7 @@ F 3 "" H 5800 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1
+L Device:R R1
 U 1 1 5A675BF7
 P 1350 1750
 F 0 "R1" V 1430 1750 50  0000 C CNN
@@ -431,7 +398,7 @@ F 3 "" H 1350 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C3
+L Device:C_Small C3
 U 1 1 5A675EE4
 P 1350 2600
 F 0 "C3" H 1360 2670 50  0000 L CNN
@@ -442,7 +409,7 @@ F 3 "" H 1350 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A675F3A
 P 1350 2850
 F 0 "#PWR?" H 1350 2600 50  0001 C CNN
@@ -453,7 +420,7 @@ F 3 "" H 1350 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C4
+L Device:C_Small C4
 U 1 1 5A676CAA
 P 10700 1400
 F 0 "C4" H 10710 1470 50  0000 L CNN
@@ -464,7 +431,7 @@ F 3 "" H 10700 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A6778C5
 P 10700 1600
 F 0 "#PWR?" H 10700 1350 50  0001 C CNN
@@ -475,7 +442,7 @@ F 3 "" H 10700 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C_Small C5
+L Device:C_Small C5
 U 1 1 5A677AD5
 P 10950 3950
 F 0 "C5" H 10960 4020 50  0000 L CNN
@@ -486,7 +453,7 @@ F 3 "" H 10950 3950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A677ADC
 P 10950 4150
 F 0 "#PWR?" H 10950 3900 50  0001 C CNN
@@ -497,7 +464,7 @@ F 3 "" H 10950 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Conn_01x16 J1
+L conn:Conn_01x16 J1
 U 1 1 5A67A1D2
 P 2400 6550
 F 0 "J1" V 2400 7350 50  0000 C CNN
@@ -572,7 +539,7 @@ A14
 Text Label 1600 6250 1    60   ~ 0
 A15
 $Comp
-L Conn_01x08 J2
+L conn:Conn_01x08 J2
 U 1 1 5A67D9E0
 P 3900 6550
 F 0 "J2" V 3900 6950 50  0000 C CNN
@@ -615,7 +582,7 @@ D6
 Text Label 3500 6250 1    60   ~ 0
 D7
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A68127B
 P 6150 4100
 F 0 "#PWR?" H 6150 3850 50  0001 C CNN
@@ -626,7 +593,7 @@ F 3 "" H 6150 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A68167C
 P 9150 3400
 F 0 "#PWR?" H 9150 3150 50  0001 C CNN
@@ -637,7 +604,7 @@ F 3 "" H 9150 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A6817AC
 P 9150 5400
 F 0 "#PWR?" H 9150 5150 50  0001 C CNN
@@ -684,7 +651,7 @@ Text Label 1150 4400 0    60   ~ 0
 Text Label 1150 4500 0    60   ~ 0
 ~BUSACK
 $Comp
-L Conn_01x11 J3
+L conn:Conn_01x11 J3
 U 1 1 5A68C75C
 P 5250 6550
 F 0 "J3" V 5250 7150 50  0000 C CNN
@@ -745,45 +712,9 @@ Wire Wire Line
 Wire Wire Line
 	1100 2400 2150 2400
 Wire Bus Line
-	4650 6000 4750 6000
-Wire Bus Line
-	4750 6000 4850 6000
-Wire Bus Line
-	4850 6000 4950 6000
-Wire Bus Line
-	4950 6000 5050 6000
-Wire Bus Line
-	5050 6000 5150 6000
-Wire Bus Line
-	5150 6000 5250 6000
-Wire Bus Line
-	5250 6000 5350 6000
-Wire Bus Line
-	5350 6000 5450 6000
-Wire Bus Line
-	5450 6000 5950 6000
-Wire Bus Line
 	4650 5550 4650 6000
 Wire Bus Line
 	1000 5550 4650 5550
-Wire Bus Line
-	1000 2300 1000 3000
-Wire Bus Line
-	1000 3000 1000 3300
-Wire Bus Line
-	1000 3300 1000 3700
-Wire Bus Line
-	1000 3700 1000 3800
-Wire Bus Line
-	1000 3800 1000 3900
-Wire Bus Line
-	1000 3900 1000 4000
-Wire Bus Line
-	1000 4000 1000 4300
-Wire Bus Line
-	1000 4300 1000 4400
-Wire Bus Line
-	1000 4400 1000 5550
 Wire Wire Line
 	9150 5400 9150 5300
 Wire Wire Line
@@ -807,40 +738,6 @@ Wire Wire Line
 Wire Bus Line
 	3400 5700 3400 6000
 Wire Bus Line
-	10450 1300 10450 1550
-Wire Bus Line
-	10450 1550 10450 1650
-Wire Bus Line
-	10450 1650 10450 1750
-Wire Bus Line
-	10450 1750 10450 1850
-Wire Bus Line
-	10450 1850 10450 1950
-Wire Bus Line
-	10450 1950 10450 2050
-Wire Bus Line
-	10450 2050 10450 2150
-Wire Bus Line
-	10450 2150 10450 2250
-Wire Bus Line
-	10450 2250 10450 3900
-Wire Bus Line
-	10450 3900 10450 4000
-Wire Bus Line
-	10450 4000 10450 4100
-Wire Bus Line
-	10450 4100 10450 4200
-Wire Bus Line
-	10450 4200 10450 4300
-Wire Bus Line
-	10450 4300 10450 4400
-Wire Bus Line
-	10450 4400 10450 4500
-Wire Bus Line
-	10450 4500 10450 4600
-Wire Bus Line
-	10450 4600 10450 5700
-Wire Bus Line
 	10450 5700 3400 5700
 Wire Wire Line
 	3700 6100 3700 6350
@@ -854,22 +751,6 @@ Wire Wire Line
 	4100 6100 4100 6350
 Wire Wire Line
 	4200 6100 4200 6350
-Wire Bus Line
-	3400 6000 3500 6000
-Wire Bus Line
-	3500 6000 3600 6000
-Wire Bus Line
-	3600 6000 3700 6000
-Wire Bus Line
-	3700 6000 3800 6000
-Wire Bus Line
-	3800 6000 3900 6000
-Wire Bus Line
-	3900 6000 4000 6000
-Wire Bus Line
-	4000 6000 4100 6000
-Wire Bus Line
-	4100 6000 4550 6000
 Wire Wire Line
 	3100 6000 3100 6350
 Wire Wire Line
@@ -902,42 +783,6 @@ Wire Wire Line
 	1600 6000 1600 6350
 Wire Wire Line
 	1700 6000 1700 6350
-Wire Bus Line
-	1450 5900 1500 5900
-Wire Bus Line
-	1500 5900 1600 5900
-Wire Bus Line
-	1600 5900 1700 5900
-Wire Bus Line
-	1700 5900 1800 5900
-Wire Bus Line
-	1800 5900 1900 5900
-Wire Bus Line
-	1900 5900 2000 5900
-Wire Bus Line
-	2000 5900 2100 5900
-Wire Bus Line
-	2100 5900 2200 5900
-Wire Bus Line
-	2200 5900 2300 5900
-Wire Bus Line
-	2300 5900 2400 5900
-Wire Bus Line
-	2400 5900 2500 5900
-Wire Bus Line
-	2500 5900 2600 5900
-Wire Bus Line
-	2600 5900 2700 5900
-Wire Bus Line
-	2700 5900 2800 5900
-Wire Bus Line
-	2800 5900 2900 5900
-Wire Bus Line
-	2900 5900 3000 5900
-Wire Bus Line
-	3000 5900 8100 5900
-Wire Bus Line
-	8100 5900 8100 4850
 Connection ~ 10950 3600
 Wire Wire Line
 	10950 4050 10950 4150
@@ -1000,24 +845,6 @@ Wire Wire Line
 	3850 4400 3550 4400
 Wire Wire Line
 	3850 4500 3550 4500
-Wire Bus Line
-	3950 3800 3950 3900
-Wire Bus Line
-	3950 3900 3950 4000
-Wire Bus Line
-	3950 4000 3950 4100
-Wire Bus Line
-	3950 4100 3950 4200
-Wire Bus Line
-	3950 4200 3950 4300
-Wire Bus Line
-	3950 4300 3950 4400
-Wire Bus Line
-	3950 4400 3950 4500
-Wire Bus Line
-	3950 4500 3950 4600
-Wire Bus Line
-	3950 4600 3950 5700
 Wire Wire Line
 	8200 4800 8550 4800
 Wire Wire Line
@@ -1101,87 +928,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 1450 8450 1450
 Wire Bus Line
-	3950 1350 3950 2200
-Wire Bus Line
-	3950 2200 3950 2300
-Wire Bus Line
-	3950 2300 3950 2400
-Wire Bus Line
-	3950 2400 3950 2500
-Wire Bus Line
-	3950 2500 3950 2600
-Wire Bus Line
-	3950 2600 3950 2700
-Wire Bus Line
-	3950 2700 3950 2800
-Wire Bus Line
-	3950 2800 3950 2900
-Wire Bus Line
-	3950 2900 3950 3000
-Wire Bus Line
-	3950 3000 3950 3100
-Wire Bus Line
-	3950 3100 3950 3200
-Wire Bus Line
-	3950 3200 3950 3300
-Wire Bus Line
-	3950 3300 3950 3400
-Wire Bus Line
-	3950 3400 3950 3500
-Wire Bus Line
-	3950 3500 3950 3600
-Wire Bus Line
-	3950 3600 3950 3700
-Wire Bus Line
 	8100 1350 3950 1350
-Wire Bus Line
-	8100 1350 8100 1450
-Wire Bus Line
-	8100 1450 8100 1550
-Wire Bus Line
-	8100 1550 8100 1650
-Wire Bus Line
-	8100 1650 8100 1750
-Wire Bus Line
-	8100 1750 8100 1850
-Wire Bus Line
-	8100 1850 8100 1950
-Wire Bus Line
-	8100 1950 8100 2050
-Wire Bus Line
-	8100 2050 8100 2150
-Wire Bus Line
-	8100 2150 8100 2250
-Wire Bus Line
-	8100 2250 8100 2350
-Wire Bus Line
-	8100 2350 8100 2450
-Wire Bus Line
-	8100 2450 8100 2550
-Wire Bus Line
-	8100 2550 8100 3700
-Wire Bus Line
-	8100 3700 8100 3800
-Wire Bus Line
-	8100 3800 8100 3900
-Wire Bus Line
-	8100 3900 8100 4000
-Wire Bus Line
-	8100 4000 8100 4100
-Wire Bus Line
-	8100 4100 8100 4200
-Wire Bus Line
-	8100 4200 8100 4300
-Wire Bus Line
-	8100 4300 8100 4400
-Wire Bus Line
-	8100 4400 8100 4500
-Wire Bus Line
-	8100 4500 8100 4600
-Wire Bus Line
-	8100 4600 8100 4700
-Wire Bus Line
-	8100 4700 8100 4900
 Wire Wire Line
 	4800 5150 1350 5150
 Wire Wire Line
@@ -1365,7 +1112,7 @@ Text Label 5450 6300 1    60   ~ 0
 Text Label 5550 6300 1    60   ~ 0
 ~BUSACK
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A68E8FE
 P 6100 6350
 F 0 "#PWR?" H 6100 6100 50  0001 C CNN
@@ -1382,7 +1129,7 @@ Wire Wire Line
 Wire Wire Line
 	5750 6250 5750 6350
 $Comp
-L VCC #PWR?
+L power:VCC #PWR?
 U 1 1 5A68F359
 P 6100 6100
 F 0 "#PWR?" H 6100 5950 50  0001 C CNN
@@ -1397,7 +1144,7 @@ Wire Wire Line
 Wire Wire Line
 	5650 6100 5650 6350
 $Comp
-L Conn_01x09 J?
+L conn:Conn_01x09 J?
 U 1 1 5AAA220A
 P 3900 7250
 F 0 "J?" H 3900 7750 50  0000 C CNN
@@ -1417,22 +1164,6 @@ Wire Wire Line
 	3600 6100 3600 6350
 Wire Bus Line
 	4550 6000 4550 6800
-Wire Bus Line
-	4550 6800 4100 6800
-Wire Bus Line
-	4100 6800 4000 6800
-Wire Bus Line
-	4000 6800 3900 6800
-Wire Bus Line
-	3900 6800 3800 6800
-Wire Bus Line
-	3800 6800 3700 6800
-Wire Bus Line
-	3700 6800 3600 6800
-Wire Bus Line
-	3600 6800 3500 6800
-Wire Bus Line
-	3500 6800 3400 6800
 Entry Wire Line
 	3600 6800 3700 6900
 Entry Wire Line
@@ -1484,7 +1215,7 @@ D7
 Text Label 4650 7050 2    60   ~ 0
 ~IORQ
 $Comp
-L C_Small C6
+L Device:C_Small C6
 U 1 1 5AAAF83B
 P 2000 1600
 F 0 "C6" H 2010 1670 50  0000 L CNN
@@ -1498,7 +1229,7 @@ Wire Wire Line
 	2000 1500 2000 1400
 Connection ~ 2000 1400
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5AAAFA18
 P 2000 1750
 F 0 "#PWR?" H 2000 1500 50  0001 C CNN
@@ -1510,4 +1241,22 @@ F 3 "" H 2000 1750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2000 1700 2000 1750
+Wire Bus Line
+	4650 6000 5950 6000
+Wire Bus Line
+	1000 2300 1000 5550
+Wire Bus Line
+	3400 6000 4550 6000
+Wire Bus Line
+	3950 3800 3950 5700
+Wire Bus Line
+	3400 6800 4550 6800
+Wire Bus Line
+	10450 1300 10450 5700
+Wire Bus Line
+	1450 5900 8100 5900
+Wire Bus Line
+	3950 1350 3950 3700
+Wire Bus Line
+	8100 1350 8100 5900
 $EndSCHEMATC

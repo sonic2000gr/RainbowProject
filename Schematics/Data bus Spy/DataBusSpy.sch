@@ -1,40 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:Zilog
-LIBS:power
-LIBS:device
-LIBS:switches
-LIBS:relays
-LIBS:motors
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:cmos_ieee
+EESchema Schematic File Version 4
 LIBS:DataBusSpy-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -55,7 +21,7 @@ Text Notes 8200 7650 0    60   ~ 0
 Text Notes 10600 7650 0    60   ~ 0
 1.01
 $Comp
-L 74HCT244 U2
+L DataBusSpy-rescue:74HCT244 U2
 U 1 1 5A1C8654
 P 6100 3550
 F 0 "U2" H 6200 4200 50  0000 L CNN
@@ -66,7 +32,7 @@ F 3 "" H 6100 3550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1
+L Device:R R1
 U 1 1 5A1C93CE
 P 7200 3050
 F 0 "R1" V 7280 3050 50  0001 C CNN
@@ -77,7 +43,7 @@ F 3 "" H 7200 3050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R2
+L Device:R R2
 U 1 1 5A1C943E
 P 7200 3250
 F 0 "R2" V 7280 3250 50  0001 C CNN
@@ -88,7 +54,7 @@ F 3 "" H 7200 3250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R3
+L Device:R R3
 U 1 1 5A1C946E
 P 7200 3450
 F 0 "R3" V 7280 3450 50  0001 C CNN
@@ -99,7 +65,7 @@ F 3 "" H 7200 3450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R4
+L Device:R R4
 U 1 1 5A1C949D
 P 7200 3650
 F 0 "R4" V 7280 3650 50  0001 C CNN
@@ -110,7 +76,7 @@ F 3 "" H 7200 3650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R5
+L Device:R R5
 U 1 1 5A1C94DD
 P 7200 3850
 F 0 "R5" V 7280 3850 50  0001 C CNN
@@ -121,7 +87,7 @@ F 3 "" H 7200 3850 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R6
+L Device:R R6
 U 1 1 5A1C95D7
 P 7200 4050
 F 0 "R6" V 7280 4050 50  0001 C CNN
@@ -132,7 +98,7 @@ F 3 "" H 7200 4050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R7
+L Device:R R7
 U 1 1 5A1C960F
 P 7200 4250
 F 0 "R7" V 7280 4250 50  0001 C CNN
@@ -143,7 +109,7 @@ F 3 "" H 7200 4250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R8
+L Device:R R8
 U 1 1 5A1C9652
 P 7200 4450
 F 0 "R8" V 7280 4450 50  0001 C CNN
@@ -154,7 +120,7 @@ F 3 "" H 7200 4450 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D0
+L Device:LED D0
 U 1 1 5A1C9B0D
 P 7650 3050
 F 0 "D0" H 7650 3150 50  0000 C CNN
@@ -165,7 +131,7 @@ F 3 "" H 7650 3050 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D1
+L Device:LED D1
 U 1 1 5A1C9B6F
 P 7650 3250
 F 0 "D1" H 7650 3350 50  0000 C CNN
@@ -176,7 +142,7 @@ F 3 "" H 7650 3250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D2
+L Device:LED D2
 U 1 1 5A1C9B8C
 P 7650 3450
 F 0 "D2" H 7650 3550 50  0000 C CNN
@@ -187,7 +153,7 @@ F 3 "" H 7650 3450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D3
+L Device:LED D3
 U 1 1 5A1C9BA9
 P 7650 3650
 F 0 "D3" H 7650 3750 50  0000 C CNN
@@ -198,7 +164,7 @@ F 3 "" H 7650 3650 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D4
+L Device:LED D4
 U 1 1 5A1C9BC6
 P 7650 3850
 F 0 "D4" H 7650 3950 50  0000 C CNN
@@ -209,7 +175,7 @@ F 3 "" H 7650 3850 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D5
+L Device:LED D5
 U 1 1 5A1C9BE3
 P 7650 4050
 F 0 "D5" H 7650 4150 50  0000 C CNN
@@ -220,7 +186,7 @@ F 3 "" H 7650 4050 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D6
+L Device:LED D6
 U 1 1 5A1C9C00
 P 7650 4250
 F 0 "D6" H 7650 4350 50  0000 C CNN
@@ -231,7 +197,7 @@ F 3 "" H 7650 4250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D7
+L Device:LED D7
 U 1 1 5A1C9C1D
 P 7650 4450
 F 0 "D7" H 7650 4550 50  0000 C CNN
@@ -242,7 +208,7 @@ F 3 "" H 7650 4450 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L 74HC00 U1
+L DataBusSpy-rescue:74HC00 U1
 U 1 1 5A2D332F
 P 3950 5050
 F 0 "U1" H 3950 5100 50  0000 C CNN
@@ -253,7 +219,7 @@ F 3 "" H 3950 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 74HC00 U1
+L DataBusSpy-rescue:74HC00 U1
 U 2 1 5A2D35C9
 P 5200 5050
 F 0 "U1" H 5200 5100 50  0000 C CNN
@@ -264,7 +230,7 @@ F 3 "" H 5200 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR2
+L power:GND #PWR2
 U 1 1 5A2D3813
 P 6100 4850
 F 0 "#PWR2" H 6100 4600 50  0001 C CNN
@@ -275,7 +241,7 @@ F 3 "" H 6100 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR1
+L power:VCC #PWR1
 U 1 1 5A2D386A
 P 6100 1850
 F 0 "#PWR1" H 6100 1700 50  0001 C CNN
@@ -387,44 +353,44 @@ Wire Wire Line
 Connection ~ 8000 4250
 Connection ~ 8000 4450
 Wire Wire Line
-	8000 3050 8000 4700
+	8000 3050 8000 3250
 Wire Wire Line
 	5600 3950 5450 3950
 Wire Wire Line
-	5450 3950 5450 4050
+	5450 3950 5450 4000
 Wire Wire Line
 	5450 4050 5600 4050
 Wire Wire Line
-	4600 4950 4600 5150
+	4600 4950 4600 5050
 Wire Wire Line
 	4550 5050 4600 5050
 Connection ~ 4600 5050
 Connection ~ 5450 4000
 Wire Wire Line
-	6100 4250 6100 4850
+	6100 4250 6100 4700
 Connection ~ 6100 4700
 Wire Wire Line
-	6100 1850 6100 2850
+	6100 1850 6100 1950
 Wire Wire Line
-	3350 4950 3150 4950
+	3350 4950 3250 4950
 Wire Wire Line
-	3350 5150 3150 5150
+	3350 5150 3300 5150
 Wire Wire Line
-	4400 2800 5600 2800
+	4400 2800 5300 2800
 Wire Wire Line
-	4400 2950 5550 2950
+	4400 2950 5200 2950
 Wire Wire Line
-	4400 3400 5550 3400
+	4400 3400 4900 3400
 Wire Wire Line
-	4400 3550 5600 3550
+	4400 3550 4800 3550
 Wire Wire Line
-	4400 3700 5450 3700
+	4400 3700 4700 3700
 Wire Wire Line
 	5450 3700 5450 3650
 Wire Wire Line
 	5450 3650 5600 3650
 Wire Wire Line
-	4400 3850 5500 3850
+	4400 3850 4600 3850
 Wire Wire Line
 	5500 3850 5500 3750
 Wire Wire Line
@@ -434,13 +400,13 @@ Wire Wire Line
 Wire Wire Line
 	5550 3450 5600 3450
 Wire Wire Line
-	4400 3250 5400 3250
+	4400 3250 5000 3250
 Wire Wire Line
 	5400 3250 5400 3350
 Wire Wire Line
 	5400 3350 5600 3350
 Wire Wire Line
-	4400 3100 5450 3100
+	4400 3100 5100 3100
 Wire Wire Line
 	5450 3100 5450 3250
 Wire Wire Line
@@ -454,15 +420,14 @@ Wire Wire Line
 Wire Wire Line
 	5000 5250 5000 5450
 Wire Wire Line
-	3750 5450 8550 5450
+	3750 5450 5000 5450
 Wire Wire Line
 	3750 5450 3750 5250
 Connection ~ 5000 5450
 Wire Wire Line
 	5000 4850 5000 4600
 Wire Wire Line
-	3750 4600 8400 4600
-Connection ~ 3750 4850
+	3750 4600 5000 4600
 Wire Wire Line
 	3750 4600 3750 4850
 Wire Wire Line
@@ -479,7 +444,7 @@ Connection ~ 6550 4700
 Wire Wire Line
 	8400 4600 8400 2650
 Wire Wire Line
-	8400 2650 5900 2650
+	8400 2650 6100 2650
 Connection ~ 6100 2650
 Connection ~ 5000 4600
 Wire Wire Line
@@ -536,9 +501,9 @@ Wire Wire Line
 	5300 1950 5300 2800
 Connection ~ 5300 2800
 Wire Wire Line
-	8000 4700 6100 4700
+	8000 4700 6550 4700
 $Comp
-L Conn_01x12 J1
+L conn:Conn_01x12 J1
 U 1 1 5A32DECF
 P 2850 2350
 F 0 "J1" H 2850 2950 50  0000 C CNN
@@ -559,7 +524,7 @@ Wire Wire Line
 	3300 2750 3300 5150
 Connection ~ 3300 5150
 $Comp
-L C C2
+L Device:C C2
 U 1 1 5A339617
 P 6450 2100
 F 0 "C2" H 6475 2200 50  0000 L CNN
@@ -570,7 +535,7 @@ F 3 "" H 6450 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C 100nf1
+L Device:C 100nf1
 U 1 1 5A3399E1
 P 8250 4850
 F 0 "100nf1" H 8275 4950 50  0000 L CNN
@@ -590,7 +555,7 @@ Wire Wire Line
 	6450 1950 6100 1950
 Connection ~ 6100 1950
 $Comp
-L GND #PWR3
+L power:GND #PWR3
 U 1 1 5A33A746
 P 6450 2350
 F 0 "#PWR3" H 6450 2100 50  0001 C CNN
@@ -602,4 +567,62 @@ F 3 "" H 6450 2350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6450 2250 6450 2350
+Wire Wire Line
+	8000 3250 8000 3450
+Wire Wire Line
+	8000 3450 8000 3650
+Wire Wire Line
+	8000 3650 8000 3850
+Wire Wire Line
+	8000 3850 8000 4050
+Wire Wire Line
+	8000 4050 8000 4250
+Wire Wire Line
+	8000 4250 8000 4450
+Wire Wire Line
+	8000 4450 8000 4700
+Wire Wire Line
+	4600 5050 4600 5150
+Wire Wire Line
+	5450 4000 5450 4050
+Wire Wire Line
+	6100 4700 6100 4850
+Wire Wire Line
+	5000 5450 6550 5450
+Wire Wire Line
+	6550 4700 6100 4700
+Wire Wire Line
+	6100 2650 6100 2850
+Wire Wire Line
+	6100 2650 5900 2650
+Wire Wire Line
+	5000 4600 8250 4600
+Wire Wire Line
+	6550 5450 8250 5450
+Wire Wire Line
+	4600 3850 5500 3850
+Wire Wire Line
+	4700 3700 5450 3700
+Wire Wire Line
+	4800 3550 5600 3550
+Wire Wire Line
+	4900 3400 5550 3400
+Wire Wire Line
+	5000 3250 5400 3250
+Wire Wire Line
+	5100 3100 5450 3100
+Wire Wire Line
+	5200 2950 5550 2950
+Wire Wire Line
+	5300 2800 5600 2800
+Wire Wire Line
+	3250 4950 3150 4950
+Wire Wire Line
+	3300 5150 3150 5150
+Wire Wire Line
+	8250 4600 8400 4600
+Wire Wire Line
+	8250 5450 8550 5450
+Wire Wire Line
+	6100 1950 6100 2650
 $EndSCHEMATC

@@ -1,39 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:switches
-LIBS:relays
-LIBS:motors
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:AddressDecoder-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -48,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 6116 U3
+L memory:6116 U3
 U 1 1 5A2E5CEB
 P 6950 4600
 F 0 "U3" H 6550 5400 50  0000 C CNN
@@ -59,7 +26,7 @@ F 3 "" H 6950 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L VCC #PWR?
+L power:VCC #PWR?
 U 1 1 5A2E60EC
 P 3950 1050
 F 0 "#PWR?" H 3950 900 50  0001 C CNN
@@ -76,7 +43,7 @@ Text Notes 8350 7650 0    60   ~ 0
 Text Notes 10600 7650 0    60   ~ 0
 1.0
 $Comp
-L GND #PWR?
+L power:GND #PWR?
 U 1 1 5A2E6C9B
 P 3950 5550
 F 0 "#PWR?" H 3950 5300 50  0001 C CNN
@@ -99,7 +66,7 @@ Z80_DATA_BUS
 Text GLabel 5150 1400 0    60   BiDi ~ 0
 Z80_ADDRESS_BUS
 $Comp
-L 27C64 U1
+L memory:27C64 U1
 U 1 1 5A2E5C26
 P 6950 2450
 F 0 "U1" H 6700 3450 50  0000 C CNN
@@ -112,7 +79,7 @@ $EndComp
 Wire Wire Line
 	6950 1250 6950 1500
 Wire Wire Line
-	3950 1050 3950 3000
+	3950 1050 3950 1250
 Wire Wire Line
 	6950 3850 6950 3700
 Wire Wire Line
@@ -121,14 +88,14 @@ Wire Wire Line
 	8750 3700 8750 1250
 Connection ~ 6950 1250
 Wire Wire Line
-	8750 1250 2950 1250
+	8750 1250 6950 1250
 Connection ~ 3950 1250
 Wire Wire Line
 	6950 5500 6950 5350
 Wire Wire Line
-	3950 3900 3950 5550
+	3950 3900 3950 5500
 Wire Wire Line
-	3200 5500 6950 5500
+	3200 5500 3350 5500
 Connection ~ 3950 5500
 Wire Wire Line
 	6950 3450 6950 3600
@@ -142,7 +109,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 3200 3200 3200
 Wire Wire Line
-	3200 3200 3200 5500
+	3200 3200 3200 3300
 Wire Wire Line
 	3200 3300 3350 3300
 Connection ~ 3350 5500
@@ -164,7 +131,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 3700 2400 3700
 Wire Wire Line
-	5250 2600 5250 5100
+	5250 2600 5250 3350
 Wire Wire Line
 	5250 3350 6250 3350
 Wire Wire Line
@@ -178,8 +145,6 @@ Wire Wire Line
 Wire Wire Line
 	5250 5100 6350 5100
 Connection ~ 5250 3350
-Wire Bus Line
-	8250 4800 8250 1400
 Entry Bus Bus
 	8150 1550 8250 1650
 Entry Bus Bus
@@ -244,8 +209,6 @@ Wire Wire Line
 	7550 4500 8150 4500
 Wire Wire Line
 	7550 4600 8150 4600
-Wire Bus Line
-	5950 1400 5950 4950
 Wire Bus Line
 	5950 1400 5150 1400
 Entry Bus Bus
@@ -350,7 +313,7 @@ Wire Wire Line
 Wire Wire Line
 	6050 4900 6350 4900
 $Comp
-L 74LS138 U2
+L AddressDecoder-rescue:74LS138 U2
 U 1 1 5A2E603E
 P 3950 3450
 F 0 "U2" H 4050 3950 50  0000 C CNN
@@ -368,4 +331,28 @@ Wire Wire Line
 	3250 3600 3250 3400
 Wire Wire Line
 	3250 3400 2400 3400
+Wire Wire Line
+	6950 1250 5650 1250
+Wire Wire Line
+	3950 1250 3950 3000
+Wire Wire Line
+	3950 1250 2950 1250
+Wire Wire Line
+	3950 5500 3950 5550
+Wire Wire Line
+	3950 5500 5450 5500
+Wire Wire Line
+	5450 5500 6950 5500
+Wire Wire Line
+	3350 5500 3950 5500
+Wire Wire Line
+	3200 3300 3200 5500
+Wire Wire Line
+	5250 3350 5250 5100
+Wire Wire Line
+	5650 1250 3950 1250
+Wire Bus Line
+	8250 1400 8250 4800
+Wire Bus Line
+	5950 1400 5950 4950
 $EndSCHEMATC
