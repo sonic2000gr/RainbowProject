@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name AddressDecoder-rescue)(type Legacy)(uri ${KIPRJMOD}/AddressDecoder-rescue.lib)(options "")(descr ""))
-)

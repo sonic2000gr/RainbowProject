@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name IODecoder-rescue)(type Legacy)(uri ${KIPRJMOD}/IODecoder-rescue.lib)(options "")(descr ""))
-)

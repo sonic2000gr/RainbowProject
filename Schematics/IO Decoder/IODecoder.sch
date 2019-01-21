@@ -97,11 +97,11 @@ LCD_~CS
 Wire Wire Line
 	4550 3100 5100 3100
 Text GLabel 5100 3100 2    60   Input ~ 0
-KBD_~CS
+KEYBOARD_~CS
 Text GLabel 5100 3700 2    60   Input ~ 0
-SPK_~CS
+JOYSTICK_~CS
 Text GLabel 5100 3500 2    60   Input ~ 0
-RPI_~CS
+SPEAKER_~CS
 Wire Wire Line
 	4550 3200 5000 3200
 Wire Wire Line
@@ -156,4 +156,12 @@ Wire Wire Line
 Wire Wire Line
 	3200 2500 3600 2500
 Connection ~ 3600 2500
+Text GLabel 5100 3900 2    60   Input ~ 0
+RASPI_~CS
+Wire Wire Line
+	5100 3900 4800 3900
+Wire Wire Line
+	4800 3900 4800 3500
+Wire Wire Line
+	4800 3500 4550 3500
 $EndSCHEMATC
