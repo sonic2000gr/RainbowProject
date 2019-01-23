@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Zilog:Z80CPU U1
+L Z80Test-rescue:Z80CPU-Zilog U1
 U 1 1 5A1A6EC8
 P 5600 3850
 F 0 "U1" H 5050 5250 50  0000 L CNN
@@ -70,7 +70,7 @@ F 3 "" H 4500 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_SPST SW?
+L Z80Test-rescue:SW_SPST-switches SW?
 U 1 1 5A1A73BF
 P 4300 2950
 F 0 "SW?" H 4300 3075 50  0000 C CNN

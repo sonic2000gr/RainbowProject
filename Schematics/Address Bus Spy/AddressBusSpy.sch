@@ -550,7 +550,7 @@ F 3 "" H 3100 2350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x20 J1
+L AddressBusSpy-rescue:Conn_01x20-conn J1
 U 1 1 5A34884C
 P 2250 5200
 F 0 "J1" H 2250 6200 50  0000 C CNN

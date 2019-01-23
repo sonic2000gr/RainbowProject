@@ -28,4 +28,5 @@
   (lib (name contrib)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/contrib.lib)(options "")(descr ""))
   (lib (name valves)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/valves.lib)(options "")(descr ""))
   (lib (name cmos_ieee)(type Legacy)(uri ${KICAD_SYMBOL_DIR}/cmos_ieee.lib)(options "")(descr ""))
+  (lib (name Z80Test-rescue)(type Legacy)(uri ${KIPRJMOD}/Z80Test-rescue.lib)(options "")(descr ""))
 )

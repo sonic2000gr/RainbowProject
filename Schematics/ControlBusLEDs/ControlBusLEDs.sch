@@ -244,7 +244,7 @@ Text Notes 8200 7650 0    60   ~ 0
 Text Notes 10600 7650 0    60   ~ 0
 1.01
 $Comp
-L conn:Conn_01x10 J1
+L ControlBusLEDs-rescue:Conn_01x10-conn J1
 U 1 1 5A324482
 P 2800 3500
 F 0 "J1" H 2800 4000 50  0000 C CNN

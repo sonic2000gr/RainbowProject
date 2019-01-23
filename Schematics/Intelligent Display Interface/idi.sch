@@ -26,7 +26,7 @@ F 3 "" H 6800 3400 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L display:HY1602E DS1
+L idi-rescue:HY1602E-display DS1
 U 1 1 5A5C5933
 P 9400 3450
 F 0 "DS1" H 9160 4200 50  0000 C CNN

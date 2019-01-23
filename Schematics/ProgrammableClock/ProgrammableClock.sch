@@ -37,7 +37,7 @@ F 3 "" H 7800 2650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x05 J1
+L ProgrammableClock-rescue:Conn_01x05-conn J1
 U 1 1 5AAF8572
 P 3300 2250
 F 0 "J1" H 3300 2450 50  0000 C CNN
@@ -118,7 +118,7 @@ $EndComp
 Text GLabel 3800 4700 0    60   Input ~ 0
 SBW_CLK
 $Comp
-L switches:SW_Push SW1
+L ProgrammableClock-rescue:SW_Push-switches SW1
 U 1 1 5AAF9A84
 P 5800 4050
 F 0 "SW1" H 5850 4150 50  0000 L CNN
@@ -129,7 +129,7 @@ F 3 "" H 5800 4250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_Push SW2
+L ProgrammableClock-rescue:SW_Push-switches SW2
 U 1 1 5AAF9AE2
 P 5800 4550
 F 0 "SW2" H 5850 4650 50  0000 L CNN
@@ -140,7 +140,7 @@ F 3 "" H 5800 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_Push SW3
+L ProgrammableClock-rescue:SW_Push-switches SW3
 U 1 1 5AAF9B33
 P 5800 5050
 F 0 "SW3" H 5850 5150 50  0000 L CNN
@@ -258,7 +258,7 @@ F 3 "" H 8550 3150 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L switches:SW_Push SW4
+L ProgrammableClock-rescue:SW_Push-switches SW4
 U 1 1 5AB0AE39
 P 5800 5550
 F 0 "SW4" H 5850 5650 50  0000 L CNN

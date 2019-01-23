@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Zilog:Z80CPU U1
+L Z80Rom-rescue:Z80CPU-Zilog U1
 U 1 1 5A1A6EC8
 P 3750 3800
 F 0 "U1" H 3200 5200 50  0000 L CNN
@@ -70,7 +70,7 @@ F 3 "" H 2650 2600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_SPST SW?
+L Z80Rom-rescue:SW_SPST-switches SW?
 U 1 1 5A1A73BF
 P 2450 2900
 F 0 "SW?" H 2450 3025 50  0000 C CNN
@@ -89,7 +89,7 @@ Text Notes 8200 7650 0    60   ~ 0
 Text Notes 10600 7650 0    60   ~ 0
 1.0
 $Comp
-L memory:27C64 U2
+L Z80Rom-rescue:27C64-memory U2
 U 1 1 5A1C6F65
 P 6000 3500
 F 0 "U2" H 5750 4500 50  0000 C CNN

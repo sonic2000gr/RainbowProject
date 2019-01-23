@@ -263,7 +263,7 @@ Text Label 10600 7650 0    60   ~ 0
 Text Label 8200 7650 0    60   ~ 0
 16/12/17
 $Comp
-L switches:SW_DIP_x08 SW2
+L RamTest-rescue:SW_DIP_x08-switches SW2
 U 1 1 5A343A4F
 P 8900 3600
 F 0 "SW2" H 8900 4150 50  0000 C CNN
@@ -274,7 +274,7 @@ F 3 "" H 8900 3600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L switches:SW_DIP_x04 SW?
+L RamTest-rescue:SW_DIP_x04-switches SW?
 U 1 1 5A343D88
 P 3300 3600
 F 0 "SW?" H 3300 3950 50  0000 C CNN
@@ -384,7 +384,7 @@ F 3 "" H 9300 4950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L memory:6116 U1
+L RamTest-rescue:6116-memory U1
 U 1 1 5A344BF5
 P 5750 4200
 F 0 "U1" H 5350 5000 50  0000 C CNN
@@ -395,7 +395,7 @@ F 3 "" H 5750 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_DIP_x02 SW?
+L RamTest-rescue:SW_DIP_x02-switches SW?
 U 1 1 5A344DDB
 P 4000 3600
 F 0 "SW?" H 4000 3850 50  0000 C CNN

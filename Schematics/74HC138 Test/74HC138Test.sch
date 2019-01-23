@@ -37,7 +37,7 @@ F 3 "" H 3800 3100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_DIP_x03 SW?
+L 74HC138Test-rescue:SW_DIP_x03-switches SW?
 U 1 1 5A1A828F
 P 4450 3550
 F 0 "SW?" V 4450 3900 50  0001 C CNN

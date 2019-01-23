@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L memory:6116 U3
+L Z80Mainboard-rescue:6116-memory U3
 U 1 1 5A2E5CEB
 P 9150 4500
 F 0 "U3" H 8750 5300 50  0000 C CNN
@@ -43,7 +43,7 @@ Text Notes 8300 7650 0    60   ~ 0
 Text Notes 10650 7650 0    60   ~ 0
 1.1
 $Comp
-L memory:27C64 U1
+L Z80Mainboard-rescue:27C64-memory U1
 U 1 1 5A2E5C26
 P 9150 2350
 F 0 "U1" H 8900 3350 50  0000 C CNN
@@ -97,7 +97,7 @@ F 3 "" H 6150 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Zilog:Z80CPU U4
+L Z80Mainboard-rescue:Z80CPU-Zilog U4
 U 1 1 5A65CBFC
 P 2850 3300
 F 0 "U4" H 2300 4700 50  0000 L CNN
@@ -464,7 +464,7 @@ F 3 "" H 10950 4150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L conn:Conn_01x16 J1
+L Z80Mainboard-rescue:Conn_01x16-conn J1
 U 1 1 5A67A1D2
 P 2400 6550
 F 0 "J1" V 2400 7350 50  0000 C CNN
@@ -539,7 +539,7 @@ A14
 Text Label 1600 6250 1    60   ~ 0
 A15
 $Comp
-L conn:Conn_01x08 J2
+L Z80Mainboard-rescue:Conn_01x08-conn J2
 U 1 1 5A67D9E0
 P 3900 6550
 F 0 "J2" V 3900 6950 50  0000 C CNN
@@ -651,7 +651,7 @@ Text Label 1150 4400 0    60   ~ 0
 Text Label 1150 4500 0    60   ~ 0
 ~BUSACK
 $Comp
-L conn:Conn_01x11 J3
+L Z80Mainboard-rescue:Conn_01x11-conn J3
 U 1 1 5A68C75C
 P 5250 6550
 F 0 "J3" V 5250 7150 50  0000 C CNN
@@ -1144,7 +1144,7 @@ Wire Wire Line
 Wire Wire Line
 	5650 6100 5650 6350
 $Comp
-L conn:Conn_01x09 J?
+L Z80Mainboard-rescue:Conn_01x09-conn J?
 U 1 1 5AAA220A
 P 3900 7250
 F 0 "J?" H 3900 7750 50  0000 C CNN
@@ -1242,15 +1242,15 @@ $EndComp
 Wire Wire Line
 	2000 1700 2000 1750
 Wire Bus Line
-	4650 6000 5950 6000
-Wire Bus Line
 	1000 2300 1000 5550
+Wire Bus Line
+	4650 6000 5950 6000
 Wire Bus Line
 	3400 6000 4550 6000
 Wire Bus Line
-	3950 3800 3950 5700
-Wire Bus Line
 	3400 6800 4550 6800
+Wire Bus Line
+	3950 3800 3950 5700
 Wire Bus Line
 	10450 1300 10450 5700
 Wire Bus Line

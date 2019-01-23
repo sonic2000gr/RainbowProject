@@ -26,14 +26,14 @@ F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4800 2650 50
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Conn_01x11_Female J1
+L Connector:Conn_01x12_Female J1
 U 1 1 5C467285
-P 3900 3750
-F 0 "J1" H 3750 3150 50  0000 L CNN
-F 1 "Conn_01x09_Female" H 3450 3250 50  0001 L CNN
-F 2 "" H 3900 3750 50  0001 C CNN
-F 3 "~" H 3900 3750 50  0001 C CNN
-	1    3900 3750
+P 3800 3650
+F 0 "J1" H 3650 3000 50  0000 L CNN
+F 1 "Conn_01x09_Female" H 3350 3150 50  0001 L CNN
+F 2 "" H 3800 3650 50  0001 C CNN
+F 3 "~" H 3800 3650 50  0001 C CNN
+	1    3800 3650
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -43,38 +43,10 @@ Wire Wire Line
 Wire Wire Line
 	5000 2550 4100 2550
 Wire Wire Line
-	4100 2550 4100 3250
-Wire Wire Line
-	4100 3350 4250 3350
-Wire Wire Line
-	4250 3350 4250 2600
-Wire Wire Line
-	4250 2600 5400 2600
-Wire Wire Line
 	5400 2600 5400 4650
 Wire Wire Line
 	5400 4650 4900 4650
 Connection ~ 4900 4650
-Wire Wire Line
-	4100 3450 4300 3450
-Wire Wire Line
-	4100 3550 4300 3550
-Wire Wire Line
-	4100 3650 4300 3650
-Wire Wire Line
-	4100 3750 4300 3750
-Wire Wire Line
-	4100 3850 4300 3850
-Wire Wire Line
-	4100 3950 4300 3950
-Wire Wire Line
-	4100 4050 4300 4050
-Wire Wire Line
-	4100 4150 4300 4150
-Wire Wire Line
-	4100 4250 4300 4250
-Text Label 3800 3450 3    100  ~ 0
-Data_Bus
 $Comp
 L Amplifier_Audio:LM386 U1
 U 1 1 5C468122
@@ -219,4 +191,58 @@ Wire Wire Line
 	4150 4750 4150 4350
 Wire Wire Line
 	4150 4350 4300 4350
+Wire Wire Line
+	4000 4250 4300 4250
+Wire Wire Line
+	4000 4150 4300 4150
+Wire Wire Line
+	4000 4050 4300 4050
+Wire Wire Line
+	4000 3950 4300 3950
+Wire Wire Line
+	4000 3850 4300 3850
+Wire Wire Line
+	4000 3750 4300 3750
+Wire Wire Line
+	4000 3650 4300 3650
+Wire Wire Line
+	4000 3550 4300 3550
+Wire Wire Line
+	4000 3450 4300 3450
+Wire Wire Line
+	4000 3350 4300 3350
+Wire Wire Line
+	4000 3150 4100 3150
+Wire Wire Line
+	4100 3150 4100 2550
+Wire Wire Line
+	4150 2600 4150 3250
+Wire Wire Line
+	4150 3250 4000 3250
+Wire Wire Line
+	4150 2600 5400 2600
+Text Notes 3650 3200 0    50   ~ 0
+5V
+Text Notes 3600 3300 0    50   ~ 0
+GND
+Text Notes 3350 3400 0    50   ~ 0
+SOUND_~CS
+Text Notes 3450 3500 0    50   ~ 0
+Z80_~WR
+Text Notes 3650 3600 0    50   ~ 0
+D7
+Text Notes 3650 3700 0    50   ~ 0
+D6
+Text Notes 3650 3800 0    50   ~ 0
+D5
+Text Notes 3650 3900 0    50   ~ 0
+D4
+Text Notes 3650 4000 0    50   ~ 0
+D3
+Text Notes 3650 4100 0    50   ~ 0
+D2
+Text Notes 3650 4200 0    50   ~ 0
+D1
+Text Notes 3650 4300 0    50   ~ 0
+D0
 $EndSCHEMATC

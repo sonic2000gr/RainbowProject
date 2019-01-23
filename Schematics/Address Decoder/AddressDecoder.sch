@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L memory:6116 U3
+L AddressDecoder-rescue:6116-memory U3
 U 1 1 5A2E5CEB
 P 6950 4600
 F 0 "U3" H 6550 5400 50  0000 C CNN
@@ -66,7 +66,7 @@ Z80_DATA_BUS
 Text GLabel 5150 1400 0    60   BiDi ~ 0
 Z80_ADDRESS_BUS
 $Comp
-L memory:27C64 U1
+L AddressDecoder-rescue:27C64-memory U1
 U 1 1 5A2E5C26
 P 6950 2450
 F 0 "U1" H 6700 3450 50  0000 C CNN

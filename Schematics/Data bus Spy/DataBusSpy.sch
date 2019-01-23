@@ -503,7 +503,7 @@ Connection ~ 5300 2800
 Wire Wire Line
 	8000 4700 6550 4700
 $Comp
-L conn:Conn_01x12 J1
+L DataBusSpy-rescue:Conn_01x12-conn J1
 U 1 1 5A32DECF
 P 2850 2350
 F 0 "J1" H 2850 2950 50  0000 C CNN

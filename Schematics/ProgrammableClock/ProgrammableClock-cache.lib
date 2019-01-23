@@ -98,11 +98,11 @@ X 2Y3 9 500 -200 100 L 50 50 1 1 O
 ENDDRAW
 ENDDEF
 #
-# conn_Conn_01x05
+# ProgrammableClock-rescue_Conn_01x05-conn
 #
-DEF conn_Conn_01x05 J 0 40 Y N 1 F N
+DEF ProgrammableClock-rescue_Conn_01x05-conn J 0 40 Y N 1 F N
 F0 "J" 0 300 50 H V C CNN
-F1 "conn_Conn_01x05" 0 -300 50 H V C CNN
+F1 "ProgrammableClock-rescue_Conn_01x05-conn" 0 -300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -125,6 +125,23 @@ X Pin_2 2 -200 100 150 R 50 50 1 1 P
 X Pin_3 3 -200 0 150 R 50 50 1 1 P
 X Pin_4 4 -200 -100 150 R 50 50 1 1 P
 X Pin_5 5 -200 -200 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# ProgrammableClock-rescue_SW_Push-switches
+#
+DEF ProgrammableClock-rescue_SW_Push-switches SW 0 40 N N 1 F N
+F0 "SW" 50 100 50 H V L CNN
+F1 "ProgrammableClock-rescue_SW_Push-switches" 0 -60 50 H V C CNN
+F2 "" 0 200 50 H I C CNN
+F3 "" 0 200 50 H I C CNN
+DRAW
+C -80 0 20 0 1 0 N
+C 80 0 20 0 1 0 N
+P 2 0 1 0 0 50 0 120 N
+P 2 0 1 0 100 50 -100 50 N
+X 1 1 -200 0 100 R 50 50 0 1 P
+X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
@@ -171,23 +188,6 @@ F3 "" 0 0 50 H I C CNN
 DRAW
 P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
 X GND 1 0 0 0 D 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
-# switches_SW_Push
-#
-DEF switches_SW_Push SW 0 40 N N 1 F N
-F0 "SW" 50 100 50 H V L CNN
-F1 "switches_SW_Push" 0 -60 50 H V C CNN
-F2 "" 0 200 50 H I C CNN
-F3 "" 0 200 50 H I C CNN
-DRAW
-C -80 0 20 0 1 0 N
-C 80 0 20 0 1 0 N
-P 2 0 1 0 0 50 0 120 N
-P 2 0 1 0 100 50 -100 50 N
-X 1 1 -200 0 100 R 50 50 0 1 P
-X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
