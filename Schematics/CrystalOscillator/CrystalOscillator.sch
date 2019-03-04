@@ -1,0 +1,397 @@
+EESchema Schematic File Version 4
+LIBS:CrystalOscillator-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 74xx:74HC14 U1
+U 1 1 5C7985CC
+P 4300 2900
+F 0 "U1" H 4300 3217 50  0000 C CNN
+F 1 "74HC14" H 4300 3126 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 4300 2900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 4300 2900 50  0001 C CNN
+	1    4300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 2 1 5C798713
+P 5100 2900
+F 0 "U1" H 5100 3217 50  0000 C CNN
+F 1 "74HC14" H 5100 3126 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 5100 2900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 5100 2900 50  0001 C CNN
+	2    5100 2900
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5C798853
+P 4300 2450
+F 0 "R1" V 4350 2320 50  0000 C CNN
+F 1 "1M" V 4186 2450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4340 2440 50  0001 C CNN
+F 3 "~" H 4300 2450 50  0001 C CNN
+	1    4300 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_US R2
+U 1 1 5C79891E
+P 4700 3100
+F 0 "R2" H 4632 3054 50  0000 R CNN
+F 1 "10k" H 4632 3145 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4740 3090 50  0001 C CNN
+F 3 "~" H 4700 3100 50  0001 C CNN
+	1    4700 3100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Crystal Y1
+U 1 1 5C798A36
+P 4300 3350
+F 0 "Y1" H 4300 3618 50  0000 C CNN
+F 1 "4MHz Crystal" H 4300 3527 50  0000 C CNN
+F 2 "Crystal:Crystal_HC18-U_Vertical" H 4300 3350 50  0001 C CNN
+F 3 "~" H 4300 3350 50  0001 C CNN
+	1    4300 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 5C798E11
+P 4700 3600
+F 0 "C1" H 4792 3646 50  0000 L CNN
+F 1 "3.3p" H 4792 3555 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 4700 3600 50  0001 C CNN
+F 3 "~" H 4700 3600 50  0001 C CNN
+	1    4700 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 5C798E8D
+P 3900 3600
+F 0 "C2" H 3992 3646 50  0000 L CNN
+F 1 "3.3p" H 3992 3555 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 3900 3600 50  0001 C CNN
+F 3 "~" H 3900 3600 50  0001 C CNN
+	1    3900 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5C7992FB
+P 4700 3850
+F 0 "#PWR0101" H 4700 3600 50  0001 C CNN
+F 1 "GND" H 4705 3677 50  0000 C CNN
+F 2 "" H 4700 3850 50  0001 C CNN
+F 3 "" H 4700 3850 50  0001 C CNN
+	1    4700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5C79940A
+P 3900 3850
+F 0 "#PWR0102" H 3900 3600 50  0001 C CNN
+F 1 "GND" H 3905 3677 50  0000 C CNN
+F 2 "" H 3900 3850 50  0001 C CNN
+F 3 "" H 3900 3850 50  0001 C CNN
+	1    3900 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 3 1 5C799613
+P 6550 2450
+F 0 "U1" H 6550 2767 50  0000 C CNN
+F 1 "74HC14" H 6550 2676 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6550 2450 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6550 2450 50  0001 C CNN
+	3    6550 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 4 1 5C79969E
+P 6550 2900
+F 0 "U1" H 6550 3217 50  0000 C CNN
+F 1 "74HC14" H 6550 3126 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6550 2900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6550 2900 50  0001 C CNN
+	4    6550 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 5 1 5C799729
+P 6550 3400
+F 0 "U1" H 6550 3717 50  0000 C CNN
+F 1 "74HC14" H 6550 3626 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6550 3400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6550 3400 50  0001 C CNN
+	5    6550 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 6 1 5C7997A8
+P 6550 3900
+F 0 "U1" H 6550 4217 50  0000 C CNN
+F 1 "74HC14" H 6550 4126 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 6550 3900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6550 3900 50  0001 C CNN
+	6    6550 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U1
+U 7 1 5C799883
+P 3000 2950
+F 0 "U1" H 3230 2996 50  0000 L CNN
+F 1 "74HC14" H 3230 2905 50  0000 L CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 3000 2950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 3000 2950 50  0001 C CNN
+	7    3000 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5C79A198
+P 3000 3600
+F 0 "#PWR0103" H 3000 3350 50  0001 C CNN
+F 1 "GND" H 3005 3427 50  0000 C CNN
+F 2 "" H 3000 3600 50  0001 C CNN
+F 3 "" H 3000 3600 50  0001 C CNN
+	1    3000 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5C79A91A
+P 6000 4000
+F 0 "#PWR0104" H 6000 3750 50  0001 C CNN
+F 1 "GND" H 6005 3827 50  0000 C CNN
+F 2 "" H 6000 4000 50  0001 C CNN
+F 3 "" H 6000 4000 50  0001 C CNN
+	1    6000 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR0105
+U 1 1 5C79AC47
+P 3000 2250
+F 0 "#PWR0105" H 3000 2100 50  0001 C CNN
+F 1 "VCC" H 3017 2423 50  0000 C CNN
+F 2 "" H 3000 2250 50  0001 C CNN
+F 3 "" H 3000 2250 50  0001 C CNN
+	1    3000 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5C79AF5F
+P 2400 2600
+F 0 "C3" H 2515 2646 50  0000 L CNN
+F 1 "0.1u" H 2515 2555 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 2438 2450 50  0001 C CNN
+F 3 "~" H 2400 2600 50  0001 C CNN
+	1    2400 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5C79B321
+P 2400 2900
+F 0 "#PWR0106" H 2400 2650 50  0001 C CNN
+F 1 "GND" H 2405 2727 50  0000 C CNN
+F 2 "" H 2400 2900 50  0001 C CNN
+F 3 "" H 2400 2900 50  0001 C CNN
+	1    2400 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x24_Female J1
+U 1 1 5C79B832
+P 4800 4700
+F 0 "J1" V 4900 4690 50  0000 C CNN
+F 1 "Conn_01x24_Female" V 5110 4660 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x24_P2.54mm_Vertical" H 4800 4700 50  0001 C CNN
+F 3 "~" H 4800 4700 50  0001 C CNN
+	1    4800 4700
+	0    -1   1    0   
+$EndComp
+Text Notes 3630 4840 0    50   ~ 0
+Vcc
+Text Notes 3850 4840 0    50   ~ 0
+GND
+Text Notes 5920 4840 0    50   ~ 0
+CLK
+Wire Wire Line
+	2400 2450 3000 2450
+Wire Wire Line
+	3000 3450 3000 3600
+Wire Wire Line
+	3000 2250 3000 2300
+Connection ~ 3000 2450
+Wire Wire Line
+	4150 2450 3900 2450
+Wire Wire Line
+	3900 2450 3900 2900
+Wire Wire Line
+	3900 2900 4000 2900
+Wire Wire Line
+	4600 2900 4700 2900
+Wire Wire Line
+	5400 2900 5750 2900
+Wire Wire Line
+	5750 2900 5750 4300
+Wire Wire Line
+	5750 4300 6000 4300
+Wire Wire Line
+	6000 4300 6000 4500
+Wire Wire Line
+	4450 3350 4700 3350
+Wire Wire Line
+	4700 3350 4700 3250
+Wire Wire Line
+	4700 3350 4700 3500
+Connection ~ 4700 3350
+Wire Wire Line
+	4150 3350 3900 3350
+Wire Wire Line
+	3900 3350 3900 3500
+Connection ~ 3900 3350
+Connection ~ 3900 2900
+Wire Wire Line
+	3900 2900 3900 3350
+Wire Wire Line
+	3900 3700 3900 3850
+Wire Wire Line
+	4700 3700 4700 3850
+Wire Wire Line
+	4700 2950 4700 2900
+Connection ~ 4700 2900
+Wire Wire Line
+	4700 2900 4800 2900
+Wire Wire Line
+	4450 2450 4700 2450
+Wire Wire Line
+	4700 2450 4700 2900
+NoConn ~ 6850 2450
+NoConn ~ 6850 2900
+NoConn ~ 6850 3400
+NoConn ~ 6850 3900
+Wire Wire Line
+	2400 2750 2400 2900
+Wire Wire Line
+	6250 2450 6000 2450
+Wire Wire Line
+	6000 2450 6000 2900
+Wire Wire Line
+	6250 2900 6000 2900
+Connection ~ 6000 2900
+Wire Wire Line
+	6000 2900 6000 3400
+Wire Wire Line
+	6250 3400 6000 3400
+Connection ~ 6000 3400
+Wire Wire Line
+	6000 3400 6000 3900
+Wire Wire Line
+	6250 3900 6000 3900
+Connection ~ 6000 3900
+Wire Wire Line
+	6000 3900 6000 4000
+NoConn ~ 3800 4500
+NoConn ~ 4000 4500
+NoConn ~ 4100 4500
+NoConn ~ 4200 4500
+NoConn ~ 4300 4500
+NoConn ~ 4400 4500
+NoConn ~ 4500 4500
+NoConn ~ 4600 4500
+NoConn ~ 4700 4500
+NoConn ~ 4900 4500
+NoConn ~ 5000 4500
+NoConn ~ 5100 4500
+NoConn ~ 5200 4500
+NoConn ~ 5300 4500
+NoConn ~ 5400 4500
+NoConn ~ 5500 4500
+NoConn ~ 5600 4500
+NoConn ~ 5700 4500
+NoConn ~ 5800 4500
+Wire Wire Line
+	3700 4500 3700 2450
+Wire Wire Line
+	3700 2450 3000 2450
+Wire Wire Line
+	3900 4500 3900 4150
+Wire Wire Line
+	3900 4150 4450 4150
+Wire Wire Line
+	4450 4150 4450 3700
+Wire Wire Line
+	4450 3700 4700 3700
+Connection ~ 4700 3700
+Wire Wire Line
+	4450 4150 4800 4150
+Wire Wire Line
+	4800 4150 4800 4500
+Connection ~ 4450 4150
+Wire Wire Line
+	4800 4150 5650 4150
+Wire Wire Line
+	5650 4150 5650 4400
+Wire Wire Line
+	5650 4400 5900 4400
+Wire Wire Line
+	5900 4400 5900 4500
+Connection ~ 4800 4150
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5C7B9FDA
+P 3350 2250
+F 0 "#FLG0101" H 3350 2325 50  0001 C CNN
+F 1 "PWR_FLAG" H 3350 2424 50  0000 C CNN
+F 2 "" H 3350 2250 50  0001 C CNN
+F 3 "~" H 3350 2250 50  0001 C CNN
+	1    3350 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2250 3350 2300
+Wire Wire Line
+	3350 2300 3000 2300
+Connection ~ 3000 2300
+Wire Wire Line
+	3000 2300 3000 2450
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 5C7BA8F3
+P 3350 3450
+F 0 "#FLG0102" H 3350 3525 50  0001 C CNN
+F 1 "PWR_FLAG" H 3350 3624 50  0000 C CNN
+F 2 "" H 3350 3450 50  0001 C CNN
+F 3 "~" H 3350 3450 50  0001 C CNN
+	1    3350 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 3450 3000 3450
+Connection ~ 3000 3450
+$EndSCHEMATC
