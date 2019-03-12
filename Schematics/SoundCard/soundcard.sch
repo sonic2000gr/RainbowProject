@@ -15,43 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L MCU_Module:Arduino_Nano_v3.x A1
-U 1 1 5C45956A
-P 4800 3650
-F 0 "A1" H 4800 2500 50  0000 C CNN
-F 1 "Arduino Nano" H 4800 2400 50  0000 C CNN
-F 2 "Module:Arduino_Nano" H 4950 2700 50  0001 L CNN
-F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4800 2650 50  0001 C CNN
-	1    4800 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x12_Female J1
-U 1 1 5C467285
-P 3800 3650
-F 0 "J1" H 3650 3000 50  0000 L CNN
-F 1 "Conn_01x09_Female" H 3350 3150 50  0001 L CNN
-F 2 "" H 3800 3650 50  0001 C CNN
-F 3 "~" H 3800 3650 50  0001 C CNN
-	1    3800 3650
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	4900 4650 4800 4650
-Wire Wire Line
-	5000 2650 5000 2550
-Wire Wire Line
-	5000 2550 4100 2550
-Wire Wire Line
-	5400 2600 5400 4650
-Wire Wire Line
-	5400 4650 4900 4650
-Connection ~ 4900 4650
-$Comp
-L Amplifier_Audio:LM386 U1
+L Amplifier_Audio:LM386 U2
 U 1 1 5C468122
 P 6500 3150
-F 0 "U1" H 6050 3300 50  0000 L CNN
+F 0 "U2" H 6050 3300 50  0000 L CNN
 F 1 "LM386" H 6050 3400 50  0000 L CNN
 F 2 "" H 6600 3250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm386.pdf" H 6700 3350 50  0001 C CNN
@@ -93,19 +60,6 @@ F 3 "~" H 6950 3650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6950 3500 6950 3450
-$Comp
-L power:GND #PWR?
-U 1 1 5C46860C
-P 6950 3900
-F 0 "#PWR?" H 6950 3650 50  0001 C CNN
-F 1 "GND" H 6955 3727 50  0000 C CNN
-F 2 "" H 6950 3900 50  0001 C CNN
-F 3 "" H 6950 3900 50  0001 C CNN
-	1    6950 3900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6950 3800 6950 3850
 Wire Wire Line
 	6950 3250 6950 3150
 Wire Wire Line
@@ -129,36 +83,17 @@ Wire Wire Line
 Wire Wire Line
 	7350 3250 7250 3250
 Wire Wire Line
-	7250 3250 7250 3850
-Wire Wire Line
-	7250 3850 6950 3850
-Connection ~ 6950 3850
-Wire Wire Line
-	6950 3850 6950 3900
-Wire Wire Line
-	6400 2850 6400 2550
-Wire Wire Line
-	6400 2550 5000 2550
-Connection ~ 5000 2550
-Wire Wire Line
-	5400 4650 6150 4650
-Wire Wire Line
-	6150 4650 6150 3850
-Wire Wire Line
-	6150 3850 6400 3850
-Connection ~ 5400 4650
-Wire Wire Line
 	6400 3450 6400 3600
-Connection ~ 6400 3850
+Connection ~ 6400 5300
 Wire Wire Line
-	6400 3850 6950 3850
+	6400 5300 6950 5300
 Wire Wire Line
 	6200 3250 6200 3600
 Wire Wire Line
 	6200 3600 6400 3600
 Connection ~ 6400 3600
 Wire Wire Line
-	6400 3600 6400 3850
+	6400 3600 6400 5300
 $Comp
 L Device:R_POT RV1
 U 1 1 5C46A4BD
@@ -181,68 +116,263 @@ Wire Wire Line
 Wire Wire Line
 	5850 3600 6200 3600
 Connection ~ 6200 3600
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-PU U1
+U 1 1 5C879101
+P 4350 3700
+F 0 "U1" H 4050 3050 50  0000 R CNN
+F 1 "ATmega328P-PU" H 4600 2950 50  0000 R CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 4350 3700 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 4350 3700 50  0001 C CNN
+	1    4350 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x24_Male J1
+U 1 1 5C87A5A2
+P 2450 3550
+F 0 "J1" H 2556 4828 50  0000 C CNN
+F 1 "Rainbow Bus Connector" V 2070 3650 50  0000 C CNN
+F 2 "" H 2450 3550 50  0001 C CNN
+F 3 "~" H 2450 3550 50  0001 C CNN
+	1    2450 3550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	5850 3050 5600 3050
+	4350 2200 4350 2150
 Wire Wire Line
-	5600 3050 5600 4750
+	4350 2150 3200 2150
 Wire Wire Line
-	5600 4750 4150 4750
+	3200 2150 3200 2450
 Wire Wire Line
-	4150 4750 4150 4350
+	3200 2450 2650 2450
 Wire Wire Line
-	4150 4350 4300 4350
+	4450 2200 4450 2150
 Wire Wire Line
-	4000 4250 4300 4250
+	4450 2150 4350 2150
+Connection ~ 4350 2150
 Wire Wire Line
-	4000 4150 4300 4150
+	2650 2650 3250 2650
+NoConn ~ 3750 2500
 Wire Wire Line
-	4000 4050 4300 4050
+	4350 5200 4350 5300
 Wire Wire Line
-	4000 3950 4300 3950
+	4350 5300 3250 5300
 Wire Wire Line
-	4000 3850 4300 3850
+	3250 5300 3250 4650
+Connection ~ 4350 5300
 Wire Wire Line
-	4000 3750 4300 3750
+	6400 2150 5350 2150
 Wire Wire Line
-	4000 3650 4300 3650
+	6400 2150 6400 2850
+Connection ~ 4450 2150
 Wire Wire Line
-	4000 3550 4300 3550
+	5850 3050 5850 2500
 Wire Wire Line
-	4000 3450 4300 3450
+	4950 2500 5850 2500
 Wire Wire Line
-	4000 3350 4300 3350
+	4350 5300 6100 5300
 Wire Wire Line
-	4000 3150 4100 3150
+	7250 3250 7250 5300
 Wire Wire Line
-	4100 3150 4100 2550
+	7250 5300 6950 5300
+Connection ~ 6950 5300
+$Comp
+L power:GND #PWR?
+U 1 1 5C8810F2
+P 6100 5500
+F 0 "#PWR?" H 6100 5250 50  0001 C CNN
+F 1 "GND" H 6105 5327 50  0000 C CNN
+F 2 "" H 6100 5500 50  0001 C CNN
+F 3 "" H 6100 5500 50  0001 C CNN
+	1    6100 5500
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4150 2600 4150 3250
+	6100 5500 6100 5300
+Connection ~ 6100 5300
 Wire Wire Line
-	4150 3250 4000 3250
+	6100 5300 6400 5300
 Wire Wire Line
-	4150 2600 5400 2600
-Text Notes 3650 3200 0    50   ~ 0
+	2650 3550 3250 3550
+Connection ~ 3250 3550
+Wire Wire Line
+	3250 3550 3250 2650
+Wire Wire Line
+	2650 4650 3250 4650
+Connection ~ 3250 4650
+Wire Wire Line
+	3250 4650 3250 3550
+Wire Wire Line
+	4950 4900 5150 4900
+Wire Wire Line
+	5150 4900 5150 5400
+Wire Wire Line
+	5150 5400 3550 5400
+Wire Wire Line
+	3550 5400 3550 3650
+Wire Wire Line
+	3550 3650 2650 3650
+Wire Wire Line
+	4950 4800 5200 4800
+Wire Wire Line
+	5200 4800 5200 5450
+Wire Wire Line
+	5200 5450 3650 5450
+Wire Wire Line
+	3650 5450 3650 3750
+Wire Wire Line
+	3650 3750 2650 3750
+Wire Wire Line
+	4950 4700 5250 4700
+Wire Wire Line
+	5250 4700 5250 5500
+Wire Wire Line
+	5250 5500 3450 5500
+Wire Wire Line
+	3450 5500 3450 3850
+Wire Wire Line
+	3450 3850 2650 3850
+Wire Wire Line
+	4950 4600 5300 4600
+Wire Wire Line
+	5300 4600 5300 5550
+Wire Wire Line
+	5300 5550 3350 5550
+Wire Wire Line
+	3350 5550 3350 3950
+Wire Wire Line
+	3350 3950 2650 3950
+Wire Wire Line
+	4950 4500 5350 4500
+Wire Wire Line
+	5350 4500 5350 5600
+Wire Wire Line
+	5350 5600 3150 5600
+Wire Wire Line
+	3150 5600 3150 4050
+Wire Wire Line
+	3150 4050 2650 4050
+Wire Wire Line
+	4950 4400 5400 4400
+Wire Wire Line
+	5400 4400 5400 5650
+Wire Wire Line
+	5400 5650 3050 5650
+Wire Wire Line
+	3050 5650 3050 4150
+Wire Wire Line
+	3050 4150 2650 4150
+Wire Wire Line
+	4950 4300 5450 4300
+Wire Wire Line
+	5450 4300 5450 5700
+Wire Wire Line
+	5450 5700 2950 5700
+Wire Wire Line
+	2950 5700 2950 4250
+Wire Wire Line
+	2950 4250 2650 4250
+Wire Wire Line
+	4950 4200 5500 4200
+Wire Wire Line
+	5500 4200 5500 5750
+Wire Wire Line
+	5500 5750 2850 5750
+Wire Wire Line
+	2850 5750 2850 4350
+Wire Wire Line
+	2850 4350 2650 4350
+Wire Wire Line
+	2750 4550 2750 5800
+Wire Wire Line
+	2750 5800 5550 5800
+Wire Wire Line
+	5550 5800 5550 3500
+Wire Wire Line
+	5550 3500 4950 3500
+Wire Wire Line
+	2650 4550 2750 4550
+Wire Wire Line
+	4950 3400 5550 3400
+Wire Wire Line
+	5550 3400 5550 2000
+Wire Wire Line
+	5550 2000 3400 2000
+Wire Wire Line
+	3400 2000 3400 2950
+Wire Wire Line
+	3400 2950 2650 2950
+NoConn ~ 4950 2600
+NoConn ~ 4950 2700
+NoConn ~ 4950 2800
+NoConn ~ 4950 2900
+NoConn ~ 4950 3000
+NoConn ~ 4950 3100
+NoConn ~ 4950 3200
+NoConn ~ 4950 3600
+NoConn ~ 4950 3700
+NoConn ~ 4950 3800
+NoConn ~ 4950 3900
+NoConn ~ 6600 3450
+NoConn ~ 6500 3450
+NoConn ~ 6500 2850
+NoConn ~ 2650 2550
+NoConn ~ 2650 2750
+NoConn ~ 2650 2850
+NoConn ~ 2650 3050
+NoConn ~ 2650 3150
+NoConn ~ 2650 3250
+NoConn ~ 2650 3350
+NoConn ~ 2650 3450
+NoConn ~ 2650 4450
+NoConn ~ 2650 4750
+$Comp
+L Device:R R2
+U 1 1 5C8E9E82
+P 5350 3850
+F 0 "R2" H 5420 3896 50  0000 L CNN
+F 1 "10k" H 5420 3805 50  0000 L CNN
+F 2 "" V 5280 3850 50  0001 C CNN
+F 3 "~" H 5350 3850 50  0001 C CNN
+	1    5350 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 4000 4950 4000
+Wire Wire Line
+	5350 3700 5350 2150
+Connection ~ 5350 2150
+Wire Wire Line
+	5350 2150 4450 2150
+Wire Wire Line
+	6950 3800 6950 5300
+Text Label 2250 2490 0    50   ~ 0
 5V
-Text Notes 3600 3300 0    50   ~ 0
+Text Label 2250 2680 0    50   ~ 0
 GND
-Text Notes 3350 3400 0    50   ~ 0
-SOUND_~CS
-Text Notes 3450 3500 0    50   ~ 0
-Z80_~WR
-Text Notes 3650 3600 0    50   ~ 0
+Text Label 2250 2980 0    50   ~ 0
+~SEL2
+Text Label 2250 3590 0    50   ~ 0
+GND
+Text Label 2250 3690 0    50   ~ 0
 D7
-Text Notes 3650 3700 0    50   ~ 0
+Text Label 2250 3780 0    50   ~ 0
 D6
-Text Notes 3650 3800 0    50   ~ 0
+Text Label 2250 3880 0    50   ~ 0
 D5
-Text Notes 3650 3900 0    50   ~ 0
+Text Label 2250 3990 0    50   ~ 0
 D4
-Text Notes 3650 4000 0    50   ~ 0
+Text Label 2250 4090 0    50   ~ 0
 D3
-Text Notes 3650 4100 0    50   ~ 0
+Text Label 2250 4190 0    50   ~ 0
 D2
-Text Notes 3650 4200 0    50   ~ 0
+Text Label 2250 4290 0    50   ~ 0
 D1
-Text Notes 3650 4300 0    50   ~ 0
+Text Label 2250 4390 0    50   ~ 0
 D0
+Text Label 2230 4580 0    50   ~ 0
+GND
+Text Label 2200 4690 0    50   ~ 0
+~WRITE
 $EndSCHEMATC
