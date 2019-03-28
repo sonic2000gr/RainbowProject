@@ -186,6 +186,10 @@ def main():
     
     textfont = pygame.font.SysFont("Press Start 2P",fontsize)
 
+    # Load rainbow logo
+
+    logo = pygame.transform.scale(pygame.image.load("logo.png"), (80,80))
+
     # Now test the text class
     thetext = Text(textfont, fontsize)
     textpos.setPos(1, 3)
@@ -202,13 +206,13 @@ def main():
         thetext.add('A', textpos, i, i)
         textpos.nextChar()
     
-    textpos.setPos(4,9)
-    thetext.add("THE RAINBOW Z80 PROJECT", textpos)
-    textpos.setPos(4,11)
+    textpos.setPos(6,10)
+    thetext.add("THE RAINBOW PROJECT", textpos)
+    textpos.setPos(4,12)
     thetext.add("DISPLAYPI VIDEO ADAPTER", textpos)
-    textpos.setPos(2,17)
+    textpos.setPos(2,18)
     thetext.add("READY - WAITING FOR Z80 CPU", textpos)
-    textpos.setPos(1,19)
+    textpos.setPos(1,20)
     for i in Color:
         thetext.add('A', textpos, i, i)
         textpos.nextChar()
@@ -221,7 +225,7 @@ def main():
         textpos.nextChar()
         thetext.add('A', textpos, i, i)
         textpos.nextChar()
-    textpos.setPos(2,22)
+    textpos.setPos(2,23)
     thetext.add(chr(169)+" 2017 - 2019 SCHOOLSPACE.GR", textpos)
     thecursor = Cursor(cursorcolor, cursorsize)
     thecursor.setPos(cursorpos)
@@ -253,6 +257,7 @@ def main():
         time = clock.tick()
         fps = textfont.render(str(1000/time), True, Color.Black.value, Color.Green.value)
         screen.blit(fps, (0,0))
+        screen.blit(logo, (650, 250))
         endprogram = getQuit()
         pygame.display.update()
 
