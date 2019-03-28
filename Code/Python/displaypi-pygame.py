@@ -126,7 +126,8 @@ def getQuit():
       if event.type == QUIT:
         return True
       if event.type == KEYDOWN:
-          return True
+        if event.key == K_q:
+            return True
 
 
 def main():
@@ -173,6 +174,7 @@ def main():
 
     textpos = Position(wposx, wposy, fontsize)
     cursorpos = Position(wposx, wposy, fontsize)
+    logopos = Position(wposx, wposy, fontsize)
     
     # Start screen setup
     
@@ -184,13 +186,14 @@ def main():
 
     # Set font and size according to screen size
     
-    textfont = pygame.font.SysFont("Press Start 2P",fontsize)
+    textfont = pygame.font.Font("PressStart2P.ttf",fontsize)
 
     # Load rainbow logo
 
-    logo = pygame.transform.scale(pygame.image.load("logo.png"), (80,80))
+    logo = pygame.transform.scale(pygame.image.load("logo2.png"), (80,80))
 
     # Now test the text class
+    logopos.setPos(14,6)
     thetext = Text(textfont, fontsize)
     textpos.setPos(1, 3)
     for i in Color:
@@ -208,10 +211,10 @@ def main():
     
     textpos.setPos(6,10)
     thetext.add("THE RAINBOW PROJECT", textpos)
-    textpos.setPos(4,12)
-    thetext.add("DISPLAYPI VIDEO ADAPTER", textpos)
-    textpos.setPos(2,18)
-    thetext.add("READY - WAITING FOR Z80 CPU", textpos)
+    textpos.setPos(3,12)
+    thetext.add("Z80 EXPERIMENTAL COMPUTER", textpos)
+    textpos.setPos(1,18)
+    thetext.add("READY - PRESS ANY KEY TO BEGIN", textpos)
     textpos.setPos(1,20)
     for i in Color:
         thetext.add('A', textpos, i, i)
@@ -257,7 +260,7 @@ def main():
         time = clock.tick()
         fps = textfont.render(str(1000/time), True, Color.Black.value, Color.Green.value)
         screen.blit(fps, (0,0))
-        screen.blit(logo, (650, 250))
+        screen.blit(logo, (logopos.translatePosX(), logopos.translatePosY()))
         endprogram = getQuit()
         pygame.display.update()
 
