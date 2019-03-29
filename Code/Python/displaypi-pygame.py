@@ -190,10 +190,10 @@ def main():
 
     # Load rainbow logo
 
-    logo = pygame.transform.scale(pygame.image.load("logo2.png"), (80,80))
+    logo = pygame.transform.scale(pygame.image.load("logo2.png"), (100,100))
 
     # Now test the text class
-    logopos.setPos(14,6)
+    logopos.setPos(1,1)
     thetext = Text(textfont, fontsize)
     textpos.setPos(1, 3)
     for i in Color:
@@ -236,9 +236,17 @@ def main():
     textpos.nextLine()
     textpos.nextLine()
 
-    # textpos.setPos(0,0)
-    # thetext.clear()
-    
+    textpos.setPos(5,1)
+    thetext.clear()
+    thetext.add("RAINBOW PROJECT", textpos)
+    textpos.setPos(5,3)
+    thetext.add("Z80 COMPUTER SYSTEM", textpos)
+    textpos.setPos(2,5)
+    thetext.add("PRESS",textpos)
+    textpos.setPos(2,7)
+    thetext.add("1 FOR SYSTEM DEMO", textpos)
+    textpos.setPos(2,9)
+    thetext.add("2 FOR TRIVIA GAME", textpos)
     
     # Begin main loop
 
