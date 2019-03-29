@@ -86,6 +86,8 @@ class Text(object):
         self.tlist.append((letter, thepos, textcolor, surfacecolor))
     def clear(self):
         del self.tlist[:]
+        textpos.setPos(0,0)
+        cursorpos.setPos(0,0)
     def render(self, screen):
         for item in self.tlist:
             thetext = self.textfont.render(item[0], True, item[2].value, item[3].value)
@@ -129,72 +131,74 @@ def getQuit():
         if event.key == K_q:
             return True
 
+# Initialize the pygame library
+
+pygame.init()
+
+# Initialize the screen object
+    
+thescreen = Screen()
+
+# Get window width / height (two possible sets only)
+    
+wwidth, wheight = thescreen.wwidth, thescreen.wheight
+
+# Get whole screen width / height
+    
+width, height = thescreen.width, thescreen.height
+
+# Get border object, this also calculates window position
+    
+theborder = Border(thescreen)
+
+# Get fontsize / cursorsize
+
+fontsize = cursorsize = thescreen.getFontSize()
+
+# Set some sane colors
+    
+surfacecolor = Color.Cyan   
+bordercolor = Color.Red
+textcolor = Color.Black
+cursorcolor = Color.Blue
+
+# Set screen
+    
+screen = pygame.display.set_mode((width, height),  DOUBLEBUF | FULLSCREEN, 32)
+
+# Calculate window position
+    
+wposx, wposy = theborder.getWindowPos()
+
+# Get a text position object and a cursor position object
+
+textpos = Position(wposx, wposy, fontsize)
+cursorpos = Position(wposx, wposy, fontsize)
+logopos = Position(wposx, wposy, fontsize)
+    
+# Start screen setup
+    
+pygame.display.set_caption("Display Pi")
+
+# Mouse should not be visible during displaypi operation
+    
+pygame.mouse.set_visible(False)
+
+# Set font and size according to screen size
+    
+textfont = pygame.font.Font("PressStart2P.ttf",fontsize)
+thetext = Text(textfont, fontsize)
+textpos.setPos(0,0)
+logopos.setPos(0,0)
+cursorpos.setPos(0,0)
 
 def main():
-    # Initialize the pygame library
-
-    pygame.init()
-
-    # Initialize the screen object
-    
-    thescreen = Screen()
-
-    # Get window width / height (two possible sets only)
-    
-    wwidth, wheight = thescreen.wwidth, thescreen.wheight
-
-    # Get whole screen width / height
-    
-    width, height = thescreen.width, thescreen.height
-
-    # Get border object, this also calculates window position
-    
-    theborder = Border(thescreen)
-
-    # Get fontsize / cursorsize
-
-    fontsize = cursorsize = thescreen.getFontSize()
-
-    # Set some sane colors
-    
-    surfacecolor = Color.Cyan   
-    bordercolor = Color.Red
-    textcolor = Color.Black
-    cursorcolor = Color.Blue
-
-    # Set screen
-    
-    screen = pygame.display.set_mode((width, height),  DOUBLEBUF | FULLSCREEN, 32)
-
-    # Calculate window position
-    
-    wposx, wposy = theborder.getWindowPos()
-
-    # Get a text position object and a cursor position object
-
-    textpos = Position(wposx, wposy, fontsize)
-    cursorpos = Position(wposx, wposy, fontsize)
-    logopos = Position(wposx, wposy, fontsize)
-    
-    # Start screen setup
-    
-    pygame.display.set_caption("Display Pi")
-
-    # Mouse should not be visible during displaypi operation
-    
-    pygame.mouse.set_visible(False)
-
-    # Set font and size according to screen size
-    
-    textfont = pygame.font.Font("PressStart2P.ttf",fontsize)
-
     # Load rainbow logo
 
     logo = pygame.transform.scale(pygame.image.load("logo2.png"), (100,100))
 
     # Now test the text class
     logopos.setPos(1,1)
-    thetext = Text(textfont, fontsize)
     textpos.setPos(1, 3)
     for i in Color:
         thetext.add('A', textpos, i, i)
@@ -236,8 +240,8 @@ def main():
     textpos.nextLine()
     textpos.nextLine()
 
-    textpos.setPos(5,1)
     thetext.clear()
+    textpos.setPos(5,1)
     thetext.add("RAINBOW PROJECT", textpos)
     textpos.setPos(5,3)
     thetext.add("Z80 COMPUTER SYSTEM", textpos)
