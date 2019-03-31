@@ -26,10 +26,32 @@ class Color(Enum):
     Gray = (0xCC, 0xCC, 0xCC)
     White = (0xFF, 0xFF, 0xFF)
 
+class Logo(object):
+    def __init__(self, logosize):
+        if logosize == 32:
+            self.logo = pygame.transform.scale(pygame.image.load("logo2.png"), (100,100))
+        else:
+            self.logo = pygame.transform.scale(pygame.image.load("logo2.png"), (75,75))
+        self.visibility = False
+    def setVisible(self, visibility):
+        if visibility:
+            self.visibility = True
+        else:
+            self.visibility = False
+    def setPos(self, pos):
+        self.pos = pos
+    def getPos(self):
+        return self.pos
+    def render(self, screen):
+        if self.visibility:
+            screen.blit(self.logo, self.pos.translatePos())
+    
+
 class Cursor(object):
     def __init__(self, cursorcolor, cursorsize):
         self.cursorcolor = cursorcolor
         self.cursorsize = cursorsize
+        self.visibility = False
     def setPos(self, pos):
         self.pos = pos
     def getPos(self):
@@ -98,6 +120,8 @@ class Screen(object):
     def __init__(self):
         self.width = pygame.display.Info().current_w
         self.height = pygame.display.Info().current_h
+        #self.width = 1024
+        #self.height = 768
         if self.height < 800:
             self.wheight = 600
             self.wwidth = 800
@@ -153,7 +177,7 @@ theborder = Border(thescreen)
 
 # Get fontsize / cursorsize
 
-fontsize = cursorsize = thescreen.getFontSize()
+fontsize = cursorsize = logosize = thescreen.getFontSize()
 
 # Set some sane colors
     
@@ -164,7 +188,7 @@ cursorcolor = Color.Blue
 
 # Set screen
     
-screen = pygame.display.set_mode((width, height),  DOUBLEBUF | FULLSCREEN, 32)
+screen = pygame.display.set_mode((width, height),  DOUBLEBUF | FULLSCREEN , 32)
 
 # Calculate window position
     
@@ -191,14 +215,15 @@ thetext = Text(textfont, fontsize)
 textpos.setPos(0,0)
 logopos.setPos(0,0)
 cursorpos.setPos(0,0)
+logo = Logo(logosize)
 
 def main():
-    # Load rainbow logo
-
-    logo = pygame.transform.scale(pygame.image.load("logo2.png"), (100,100))
-
-    # Now test the text class
+    # Load rainbow logo and set to visible
+    
     logopos.setPos(1,1)
+    logo.setPos(logopos)
+    logo.setVisible(True)
+        
     textpos.setPos(1, 3)
     for i in Color:
         thetext.add('A', textpos, i, i)
@@ -269,10 +294,10 @@ def main():
 
         # Render the cursor (if enabled)
         thecursor.render(screen)
+        logo.render(screen)
         time = clock.tick()
         fps = textfont.render(str(1000/time), True, Color.Black.value, Color.Green.value)
         screen.blit(fps, (0,0))
-        screen.blit(logo, (logopos.translatePosX(), logopos.translatePosY()))
         endprogram = getQuit()
         pygame.display.update()
 
