@@ -4,6 +4,7 @@
 #
 
 import pygame
+import RPi.GPIO as GPIO
 from pygame.locals import *
 from enum import Enum
 from sys import exit
@@ -155,6 +156,75 @@ def getQuit():
         if event.key == K_q:
             return True
 
+# Callback routine for Z80 Write
+
+def z80_write():
+  global inchannel, queue, textpos, thetext, textcolor,\
+         surfacecolor, cursorpos, logopos, logo, waiting
+
+  mul = 1
+  data = 0
+  for i in inchannel:
+      data += GPIO.input(i) * mul
+      mul = mul * 2
+  print "Data ", data
+  if data == 255:
+      # All reset
+      textpos.setPos(0,0)
+      logo.setVisible(False)
+      thetext.clear()
+      waiting = 0
+      return
+  if waiting == 0 and data == 254:
+      # Clear screen
+      textpos.setPos(0,0)
+      thetext.clear()
+      return
+  if waiting == 0 and data == 253:
+      # Set position command, wait for two more bytes
+      waiting = 2
+      queue.append(data)
+      return
+  if waiting == 0 and data == 252:
+      # Set textcolor/backcolor wait for one more byte
+      waiting = 1
+      queue.append(data)
+      return
+  if waiting:
+      queue.append(data)
+      waiting = waiting - 1
+      if waiting == 0:
+          # process queue
+          if queue[0] == 253:
+              textpos.setPos(queue[1], queue[2])
+          if queue[0] == 252:
+              pass
+          del queue[:]
+          return
+  if data !=0 :
+      textpos.nextChar()
+      thetext.add(chr(data), textpos, textcolor, surfacecolor)
+  return
+
+# Initialize RPi.GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+# GPIO10 = Z80 Write (active low)
+
+GPIO.setup(10, GPIO.IN)
+GPIO.add_event_detect(10, GPIO.FALLING)
+
+# Data bus D7-D0 = 14,15,18,23,24,25,8,7
+
+inchannel = [7,8,25,24,23,18,15,14]
+GPIO.setup(inchannel, GPIO.IN)
+  
+# Initialize command/data queue
+
+queue = list()
+waiting = 0
+
 # Initialize the pygame library
 
 pygame.init()
@@ -188,7 +258,7 @@ cursorcolor = Color.Blue
 
 # Set screen
     
-screen = pygame.display.set_mode((width, height),  DOUBLEBUF | FULLSCREEN , 32)
+screen = pygame.display.set_mode((width, height),  DOUBLEBUF , 32)
 
 # Calculate window position
     
@@ -278,10 +348,15 @@ def main():
     thetext.add("2 FOR TRIVIA GAME", textpos)
     
     # Begin main loop
-
+    thetext.clear()
+    textpos.setPos(0,0)
+    logo.setVisible(False)
     endprogram = False
     clock = pygame.time.Clock()
     while not endprogram:      
+
+        if GPIO.event_detected(10):
+            z80_write()
           
         # fill screen with border color
         screen.fill(bordercolor.value)
@@ -293,6 +368,7 @@ def main():
         thetext.render(screen)
 
         # Render the cursor (if enabled)
+
         thecursor.render(screen)
         logo.render(screen)
         time = clock.tick()
@@ -302,7 +378,6 @@ def main():
         pygame.display.update()
 
     # shutdown pygame and exit program
-    
     pygame.quit()
     exit()
 

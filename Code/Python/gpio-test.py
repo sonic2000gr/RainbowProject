@@ -1,13 +1,14 @@
 import pigpio
-import time
+
 
 def z80_write(gpio, level, tick):
   global cb1
-  cb1.cancel()
+  #cb1.cancel()
   data = pi.read_bank_1()
   data = (data & 1044480) >> 12
-  print bin(data), chr(data)
-  cb1 = pi.callback(10, pigpio.FALLING_EDGE, z80_write)
+  print data
+  #pi.set_pull_up_down(10, pigpio.PUD_UP)
+  #cb1 = pi.callback(10, pigpio.FALLING_EDGE, z80_write)
   return
 
 pi = pigpio.pi()
@@ -18,6 +19,8 @@ pi.set_mode(10, pigpio.INPUT)
 # GPIO12 - 19 = Z80 Data bus (active high)
 for i in range(0,32):
   pi.set_pull_up_down(i, pigpio.PUD_DOWN)
+
+pi.set_pull_up_down(10, pigpio.PUD_UP)
 
 for i in range(12,20):
   pi.set_mode(i, pigpio.INPUT)
