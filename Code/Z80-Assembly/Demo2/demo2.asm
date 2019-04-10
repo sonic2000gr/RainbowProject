@@ -1,5 +1,5 @@
 		ORG 0000H 	; Program Entry Point (BIOS Start)
-endram:		EQU 27FFH 	; Stack at end of RAM (dec 10239)
+endram:	EQU 27FFH 	; Stack at end of RAM (dec 10239)
 		LD SP, endram 	; Load Stack Pointer
 		JP start	; JP to main program (subs follow)
 disp:		LD A, (HL)	; Display sub for null terminated strings (LCD). A and HL affected
@@ -8,7 +8,7 @@ disp:		LD A, (HL)	; Display sub for null terminated strings (LCD). A and HL affe
 		OUT (01H),A	; Output to LCD
 		INC HL		; Move to next letter
 		JP disp		; Loop until word is printed
-disppi:		LD A, (HL)	; Same as disp but for RasPI
+disppi:	LD A, (HL)	; Same as disp but for RasPI
 		CP 127		; terminates by 127 instead of 0
 		RET Z
 		OUT (04H),A
@@ -17,73 +17,115 @@ disppi:		LD A, (HL)	; Same as disp but for RasPI
 delay:		NOP		; Execute nops for delay. Value in B. 
 		DJNZ delay	; do while B!=0
 		RET
-check:		NOP
-		RET		
-keybwait:	NOP		; wait for keypress routine (stub)
-		RET		
-readkeywait:	NOP		; Read keyboard (wait) (stub)
-		RET
+
 start:		LD A, 0E0H	; Clear LCD
 		OUT (01H), A
 		LD HL, lcdm	; Display Message
 		CALL disp
-		OUT (0D1H), A
-		LD HL, lcdm2
-		CALL disp
-		LD IX, answers
-		LD B, (IX+0)
-startquiz:	LD HL, q1	; send bytes to PI for quiz
-		call disppi
-		call check
-		LD B, (IX+1)
-		LD HL, q2
-		call disppi
-		call check
-		LD B, (IX+2)
-		LD HL, q3
-		call disppi
-		call check
-		LD B, (IX+3)
-		LD HL, q4
-		call disppi
-		LD B, (IX+4)
-		LD HL, q5
-		call disppi
-		call check
-		LD B, (IX+5)
-		LD HL, q6
-		call disppi
-		call check
-		LD B, (IX+6)
-		LD HL, q7
-		call disppi
-		call check
-		LD B, (IX+7)
-		LD HL, q8
-		call disppi
-		call check
-		LD B, (IX+8)
-		LD HL, q9
-		call disppi
-		call check
-		LD B, (IX+9)
-		LD HL, q10
-		call disppi
-		call check
-		HALT
+
+startquiz:	LD A, 0FBH   ; Show TI Screen
+		OUT (04H), A
+		LD B, 10
+		CALL delay	; Wait a bit
 		
-correct:	DEFB "Correct!"
-		DEFB 07FH
-incorrect:	DEFB "Incorrect!"
-		DEFB 07FH
+		LD HL, q1	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q1a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q2	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q2a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q3	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q3a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q4	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q4a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q5	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q5a
+		call disppi
+		LD B, 10
+		call delay
+		
+		LD HL, q6	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q6a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q7	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q7a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q8	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q8a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q9	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q9a
+		call disppi
+		LD B, 10
+		call delay
+
+		LD HL, q10	; send bytes to PI for quiz
+		call disppi	
+		LD B,10
+		call delay
+		LD HL, q10a
+		call disppi
+		LD B, 10
+		call delay
+
+		JP startquiz
+		
 lcdm:		DEFB "Rainbow Project"
-lcdm2:		DEFB "Z80 CPU Running"
+		DEFB 0D0H
+		DEFB "Z80 CPU Running"
 		DEFB 0
-answers:	DEFB 02H, 03H, 01H, 03H
-		DEFB 02H, 04H, 02H, 03H
-		DEFB 01H, 04H
 q1:		DEFB 0FFH 		; First question - all reset
-		DEFB 0FDH, 01H, 01H	; Set logo position
+		DEFB 0FCH, 01H, 01H	; Set logo position
 		DEFB 080H		; Display logo
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -100,6 +142,9 @@ q1:		DEFB 0FFH 		; First question - all reset
 		DEFB "3. 20 BIT"
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. 32 BIT"
+		DEFB 07FH
+q1a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 2"
 		DEFB 07FH
 q2:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
@@ -118,6 +163,9 @@ q2:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. 128 Mbyte"
 		DEFB 07FH
+q2a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 3"
+		DEFB 07FH
 q3:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -134,6 +182,9 @@ q3:		DEFB 0FEH		; clear screen
 		DEFB "3. Z80C"
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. Z80H"
+		DEFB 07FH
+q3a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 1"
 		DEFB 07FH
 q4:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
@@ -152,6 +203,9 @@ q4:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. 1990"
 		DEFB 07FH
+q4a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 3"
+		DEFB 07FH
 q5:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -168,6 +222,9 @@ q5:		DEFB 0FEH		; clear screen
 		DEFB "3. 29000"
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. 68000"
+		DEFB 07FH
+q5a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 2"
 		DEFB 07FH
 q6:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
@@ -187,6 +244,9 @@ q6:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. Accumulator"
 		DEFB 07FH
+q6a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 4"
+		DEFB 07FH
 q7:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -203,6 +263,9 @@ q7:		DEFB 0FEH		; clear screen
 		DEFB "3. TI TMS9900"
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. Motorola 68k"
+		DEFB 07FH
+q7a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 2"
 		DEFB 07FH
 q8:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
@@ -223,6 +286,9 @@ q8:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. Atari ST"
 		DEFB 07FH
+q8a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 3"
+		DEFB 07FH
 q9:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -240,10 +306,13 @@ q9:		DEFB 0FEH		; clear screen
 		DEFB "2. Motorola"
 		DEFB 0FDH, 05H, 0BH
 		DEFB "3. Fairchild"
-		DEFB 0FDH, 05H, 0CH
+		DEFB 0FDH, 05H, 0DH
 		DEFB "4. Hewlett "
 		DEFB " Packard"
 		DEFB 07FH
+q9a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 1"
+		DEFB 07FH 
 q10:		DEFB 0FEH		; clear screen
 		DEFB 0FDH, 05H, 01H	
 		DEFB "RAINBOW PROJECT"
@@ -260,4 +329,7 @@ q10:		DEFB 0FEH		; clear screen
 		DEFB "3. 6 MHz"
 		DEFB 0FDH, 05H, 0DH
 		DEFB "4. 20 MHz"
+		DEFB 07FH
+q10a:		DEFB 0FDH, 05H, 0FH
+		DEFB "Correct: 4"
 		DEFB 07FH	
