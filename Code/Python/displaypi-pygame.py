@@ -160,14 +160,16 @@ def getQuit():
 
 def z80_write():
   global inchannel, queue, textpos, thetext, textcolor,\
-         surfacecolor, cursorpos, logopos, logo, waiting
+         surfacecolor, cursorpos, logopos, logo, waiting, showti
 
   mul = 1
   data = 0
   for i in inchannel:
       data += GPIO.input(i) * mul
       mul = mul * 2
-  print "Data ", data
+
+  #print "Data ", data
+
   if data == 255:
       # All reset
       textpos.setPos(0,0)
@@ -175,21 +177,44 @@ def z80_write():
       thetext.clear()
       waiting = 0
       return
+
+  # Make logo visible
+  
+  if waiting == 0 and data == 128:
+      logo.setVisible(True)
+      return
+
+  # Make logo invisible
+  
+  if waiting == 0 and data == 129:
+      logo.setVisible(False)
+      return
+
+  # Clear screen - this does not affect logo
+
   if waiting == 0 and data == 254:
       # Clear screen
       textpos.setPos(0,0)
       thetext.clear()
       return
+
   if waiting == 0 and data == 253:
       # Set position command, wait for two more bytes
       waiting = 2
       queue.append(data)
       return
+
   if waiting == 0 and data == 252:
-      # Set textcolor/backcolor wait for one more byte
-      waiting = 1
+      # Set logo position wait for two more bytes
+      waiting = 2
       queue.append(data)
       return
+
+  if waiting == 0 and data == 251:
+      # Show TI Screen
+      showti = True
+      return
+    
   if waiting:
       queue.append(data)
       waiting = waiting - 1
@@ -198,13 +223,59 @@ def z80_write():
           if queue[0] == 253:
               textpos.setPos(queue[1], queue[2])
           if queue[0] == 252:
-              pass
+              logopos.setPos(queue[1], queue[2])
           del queue[:]
           return
+      return
+
   if data !=0 :
       textpos.nextChar()
       thetext.add(chr(data), textpos, textcolor, surfacecolor)
   return
+
+def TI_Screen():
+    textpos.setPos(0,0)
+    thetext.clear()
+    logopos.setPos(13,6)
+    logo.setPos(logopos)
+    logo.setVisible(True)
+        
+    textpos.setPos(1, 3)
+    for i in Color:
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+    textpos.nextLine()
+    textpos.nextChar()
+    for i in Color:
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+    
+    textpos.setPos(6,10)
+    thetext.add("THE RAINBOW PROJECT", textpos)
+    textpos.setPos(3,12)
+    thetext.add("Z80 EXPERIMENTAL COMPUTER", textpos)
+    textpos.setPos(3,18)
+    thetext.add("READY - WAITING FOR Z80 CPU", textpos)
+    textpos.setPos(1,20)
+    for i in Color:
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+    textpos.nextLine()
+    textpos.nextChar()
+    for i in Color:
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+        thetext.add('A', textpos, i, i)
+        textpos.nextChar()
+    textpos.setPos(2,23)
+    thetext.add(chr(169)+" 2017 - 2019 SCHOOLSPACE.GR", textpos)
+    return
 
 # Initialize RPi.GPIO
 
@@ -258,7 +329,7 @@ cursorcolor = Color.Blue
 
 # Set screen
     
-screen = pygame.display.set_mode((width, height),  DOUBLEBUF , 32)
+screen = pygame.display.set_mode((width, height),  DOUBLEBUF|FULLSCREEN , 32)
 
 # Calculate window position
     
@@ -290,69 +361,27 @@ logo = Logo(logosize)
 def main():
     # Load rainbow logo and set to visible
     
-    logopos.setPos(1,1)
-    logo.setPos(logopos)
-    logo.setVisible(True)
-        
-    textpos.setPos(1, 3)
-    for i in Color:
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-    textpos.nextLine()
-    textpos.nextChar()
-    for i in Color:
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-    
-    textpos.setPos(6,10)
-    thetext.add("THE RAINBOW PROJECT", textpos)
-    textpos.setPos(3,12)
-    thetext.add("Z80 EXPERIMENTAL COMPUTER", textpos)
-    textpos.setPos(1,18)
-    thetext.add("READY - PRESS ANY KEY TO BEGIN", textpos)
-    textpos.setPos(1,20)
-    for i in Color:
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-    textpos.nextLine()
-    textpos.nextChar()
-    for i in Color:
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-        thetext.add('A', textpos, i, i)
-        textpos.nextChar()
-    textpos.setPos(2,23)
-    thetext.add(chr(169)+" 2017 - 2019 SCHOOLSPACE.GR", textpos)
     thecursor = Cursor(cursorcolor, cursorsize)
     thecursor.setPos(cursorpos)
     thecursor.setVisible(False)
-    textpos.nextLine()
-    textpos.nextLine()
-
-    thetext.clear()
-    textpos.setPos(5,1)
-    thetext.add("RAINBOW PROJECT", textpos)
-    textpos.setPos(5,3)
-    thetext.add("Z80 COMPUTER SYSTEM", textpos)
-    textpos.setPos(2,5)
-    thetext.add("PRESS",textpos)
-    textpos.setPos(2,7)
-    thetext.add("1 FOR SYSTEM DEMO", textpos)
-    textpos.setPos(2,9)
-    thetext.add("2 FOR TRIVIA GAME", textpos)
+    showti = True
+    #thetext.clear()
+    #textpos.setPos(5,1)
+    #textpos.setPos(5,3)
+    #thetext.add("Z80 COMPUTER SYSTEM", textpos)
+    #textpos.setPos(2,5)
+    #thetext.add("PRESS",textpos)
+    #textpos.setPos(2,7)
+    #thetext.add("1 FOR SYSTEM DEMO", textpos)
+    #textpos.setPos(2,9)
+    #thetext.add("2 FOR TRIVIA GAME", textpos)
     
     # Begin main loop
     thetext.clear()
     textpos.setPos(0,0)
     logo.setVisible(False)
     endprogram = False
-    clock = pygame.time.Clock()
+    #clock = pygame.time.Clock()
     while not endprogram:      
 
         if GPIO.event_detected(10):
@@ -364,16 +393,17 @@ def main():
         # draw our window
         pygame.draw.rect(screen, surfacecolor.value ,(wposx, wposy, wwidth, wheight))
 
-        # Render the content 
+        # Render the content
+        if showti:
+            TI_Screen()
+            showti = False
+        
         thetext.render(screen)
-
-        # Render the cursor (if enabled)
-
         thecursor.render(screen)
         logo.render(screen)
-        time = clock.tick()
-        fps = textfont.render(str(1000/time), True, Color.Black.value, Color.Green.value)
-        screen.blit(fps, (0,0))
+        #time = clock.tick()
+        #fps = textfont.render(str(1000/time), True, Color.Black.value, Color.Green.value)
+        #screen.blit(fps, (0,0))
         endprogram = getQuit()
         pygame.display.update()
 
