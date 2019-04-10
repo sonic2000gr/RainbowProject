@@ -357,14 +357,14 @@ textpos.setPos(0,0)
 logopos.setPos(0,0)
 cursorpos.setPos(0,0)
 logo = Logo(logosize)
+showti = True
 
 def main():
     # Load rainbow logo and set to visible
-    
+    global showti    
     thecursor = Cursor(cursorcolor, cursorsize)
     thecursor.setPos(cursorpos)
     thecursor.setVisible(False)
-    showti = True
     #thetext.clear()
     #textpos.setPos(5,1)
     #textpos.setPos(5,3)
