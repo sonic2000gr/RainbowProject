@@ -1,0 +1,282 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATmega:ATmega328-PU U1
+U 1 1 5CB37C82
+P 5750 3750
+F 0 "U1" H 5700 3850 50  0000 R CNN
+F 1 "ATmega328-PU" H 5950 3750 50  0000 R CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 5750 3750 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 5750 3750 50  0001 C CNN
+	1    5750 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x05_Odd_Even J1
+U 1 1 5CB37D36
+P 3300 2700
+F 0 "J1" H 3350 3117 50  0000 C CNN
+F 1 "SPI Connector" H 3550 3050 50  0000 C CNN
+F 2 "" H 3300 2700 50  0001 C CNN
+F 3 "~" H 3300 2700 50  0001 C CNN
+	1    3300 2700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2250 5750 2100
+Wire Wire Line
+	3500 2100 3500 2500
+Wire Wire Line
+	5850 2250 5850 2100
+Wire Wire Line
+	3500 2100 4600 2100
+Connection ~ 5750 2100
+Wire Wire Line
+	5750 2100 5850 2100
+Wire Wire Line
+	5750 5250 4650 5250
+Wire Wire Line
+	3850 5250 3850 3300
+Wire Wire Line
+	3850 2800 3500 2800
+Wire Wire Line
+	3000 2500 2700 2500
+Wire Wire Line
+	2700 2500 2700 5350
+Wire Wire Line
+	2700 5350 6700 5350
+Wire Wire Line
+	6700 5350 6700 2850
+Wire Wire Line
+	6700 2850 6350 2850
+Wire Wire Line
+	3000 2700 2800 2700
+Wire Wire Line
+	2800 2700 2800 5450
+Wire Wire Line
+	2800 5450 6500 5450
+Wire Wire Line
+	6500 5450 6500 4050
+Wire Wire Line
+	6500 4050 6350 4050
+Wire Wire Line
+	3000 2800 2900 2800
+Wire Wire Line
+	2900 2800 2900 5550
+Wire Wire Line
+	2900 5550 6850 5550
+Wire Wire Line
+	6850 5550 6850 3050
+Wire Wire Line
+	6850 3050 6350 3050
+Wire Wire Line
+	3000 2900 3000 5650
+Wire Wire Line
+	3000 5650 7000 5650
+Wire Wire Line
+	7000 5650 7000 2950
+Wire Wire Line
+	7000 2950 6350 2950
+NoConn ~ 5150 2550
+$Comp
+L Connector:Conn_01x25_Female J2
+U 1 1 5CB38ADE
+P 8250 3300
+F 0 "J2" H 7800 3550 50  0000 L CNN
+F 1 "Rainbow Bus" H 7550 3450 50  0000 L CNN
+F 2 "" H 8250 3300 50  0001 C CNN
+F 3 "~" H 8250 3300 50  0001 C CNN
+	1    8250 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2100 5850 2100
+Connection ~ 5850 2100
+Wire Wire Line
+	8050 2300 7200 2300
+Wire Wire Line
+	7200 2300 7200 4300
+Wire Wire Line
+	7200 5250 5750 5250
+Connection ~ 5750 5250
+Wire Wire Line
+	8050 4300 7200 4300
+Connection ~ 7200 4300
+Wire Wire Line
+	7200 4300 7200 5250
+Wire Wire Line
+	8050 4400 7450 4400
+Wire Wire Line
+	7450 4400 7450 3050
+Wire Wire Line
+	7450 3050 6850 3050
+Connection ~ 6850 3050
+Text Notes 8300 4400 0    50   ~ 0
+CLK\n
+Text Notes 8300 4300 0    50   ~ 0
+GND
+Text Notes 8300 2100 0    50   ~ 0
+5V
+Text Notes 8300 2300 0    50   ~ 0
+GND
+NoConn ~ 8050 2200
+NoConn ~ 8050 2400
+NoConn ~ 8050 2500
+NoConn ~ 8050 2600
+NoConn ~ 8050 2700
+NoConn ~ 8050 2800
+NoConn ~ 8050 2900
+NoConn ~ 8050 3000
+NoConn ~ 8050 3100
+NoConn ~ 8050 3200
+NoConn ~ 8050 3300
+NoConn ~ 8050 3400
+NoConn ~ 8050 3500
+NoConn ~ 8050 3600
+NoConn ~ 8050 3700
+NoConn ~ 8050 3800
+NoConn ~ 8050 3900
+NoConn ~ 8050 4000
+NoConn ~ 8050 4100
+NoConn ~ 8050 4200
+NoConn ~ 8050 4500
+$Comp
+L Device:C_Small C1
+U 1 1 5CB4043C
+P 4600 2300
+F 0 "C1" H 4692 2346 50  0000 L CNN
+F 1 "100n" H 4692 2255 50  0000 L CNN
+F 2 "" H 4600 2300 50  0001 C CNN
+F 3 "~" H 4600 2300 50  0001 C CNN
+	1    4600 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2200 4600 2100
+Connection ~ 4600 2100
+Wire Wire Line
+	4600 2100 5050 2100
+Wire Wire Line
+	4600 2550 3850 2550
+Wire Wire Line
+	3850 2550 3850 2800
+Wire Wire Line
+	4600 2400 4600 2550
+Connection ~ 3850 2800
+$Comp
+L Switch:SW_Push_Dual SW1
+U 1 1 5CB41666
+P 4600 3100
+F 0 "SW1" H 4600 3293 50  0000 C CNN
+F 1 "SW_Push_Dual" H 4600 3294 50  0001 C CNN
+F 2 "" H 4600 3300 50  0001 C CNN
+F 3 "" H 4600 3300 50  0001 C CNN
+	1    4600 3100
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4400 3100
+NoConn ~ 4800 3100
+$Comp
+L Device:R R1
+U 1 1 5CB42A87
+P 4100 3300
+F 0 "R1" V 3893 3300 50  0000 C CNN
+F 1 "10k" V 3984 3300 50  0000 C CNN
+F 2 "" V 4030 3300 50  0001 C CNN
+F 3 "~" H 4100 3300 50  0001 C CNN
+	1    4100 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4400 3300 4300 3300
+Wire Wire Line
+	3950 3300 3850 3300
+Connection ~ 3850 3300
+Wire Wire Line
+	3850 3300 3850 2800
+Wire Wire Line
+	4800 3300 5050 3300
+Connection ~ 5050 2100
+Wire Wire Line
+	5050 2100 5750 2100
+Wire Wire Line
+	4300 3300 4300 2000
+Wire Wire Line
+	4300 2000 6600 2000
+Wire Wire Line
+	6600 2000 6600 2550
+Wire Wire Line
+	6600 2550 6350 2550
+Connection ~ 4300 3300
+Wire Wire Line
+	4300 3300 4250 3300
+NoConn ~ 6350 2650
+NoConn ~ 6350 2750
+NoConn ~ 6350 3150
+NoConn ~ 6350 3250
+NoConn ~ 6350 3450
+NoConn ~ 6350 3550
+NoConn ~ 6350 3650
+NoConn ~ 6350 3750
+NoConn ~ 6350 3850
+NoConn ~ 6350 3950
+NoConn ~ 6350 4250
+NoConn ~ 6350 4350
+NoConn ~ 6350 4450
+NoConn ~ 6350 4550
+NoConn ~ 6350 4650
+NoConn ~ 6350 4750
+NoConn ~ 6350 4850
+NoConn ~ 6350 4950
+$Comp
+L Device:LED_ALT D1
+U 1 1 5CB520D1
+P 4650 4750
+F 0 "D1" V 4642 4633 50  0000 R CNN
+F 1 "LED_ALT" V 4597 4632 50  0001 R CNN
+F 2 "" H 4650 4750 50  0001 C CNN
+F 3 "~" H 4650 4750 50  0001 C CNN
+	1    4650 4750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 4900 4650 5250
+Connection ~ 4650 5250
+Wire Wire Line
+	4650 5250 3850 5250
+$Comp
+L Device:R R2
+U 1 1 5CB52D38
+P 4650 4300
+F 0 "R2" H 4580 4254 50  0000 R CNN
+F 1 "1k" H 4580 4345 50  0000 R CNN
+F 2 "" V 4580 4300 50  0001 C CNN
+F 3 "~" H 4650 4300 50  0001 C CNN
+	1    4650 4300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4650 4450 4650 4600
+Wire Wire Line
+	5050 2100 5050 3300
+Wire Wire Line
+	4650 4150 4650 3700
+Wire Wire Line
+	4650 3700 5050 3700
+Wire Wire Line
+	5050 3700 5050 3300
+Connection ~ 5050 3300
+$EndSCHEMATC
