@@ -1,0 +1,702 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 9850 4950 0    50   UnSpc ~ 0
+5V
+$Comp
+L power:+5V #PWR01
+U 1 1 5CB4EBBA
+P 9950 4950
+F 0 "#PWR01" H 9950 4800 50  0001 C CNN
+F 1 "+5V" V 9965 5078 50  0000 L CNN
+F 2 "" H 9950 4950 50  0001 C CNN
+F 3 "" H 9950 4950 50  0001 C CNN
+	1    9950 4950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9850 4950 9950 4950
+$Comp
+L power:+3.3V #PWR02
+U 1 1 5CB4EC84
+P 9950 5150
+F 0 "#PWR02" H 9950 5000 50  0001 C CNN
+F 1 "+3.3V" V 9965 5278 50  0000 L CNN
+F 2 "" H 9950 5150 50  0001 C CNN
+F 3 "" H 9950 5150 50  0001 C CNN
+	1    9950 5150
+	0    1    1    0   
+$EndComp
+Text GLabel 9850 5150 0    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	9850 5150 9950 5150
+$Comp
+L Device:R_US R2
+U 1 1 5CB522B0
+P 2050 4150
+F 0 "R2" V 1950 4300 50  0000 R CNN
+F 1 "10k" V 1950 4100 50  0000 R CNN
+F 2 "" V 2090 4140 50  0001 C CNN
+F 3 "~" H 2050 4150 50  0001 C CNN
+	1    2050 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1850 4150 1850 3950
+$Comp
+L Transistor_FET:BS170 Q1
+U 1 1 5CB522B8
+P 1950 3750
+F 0 "Q1" H 2200 3750 50  0000 C CNN
+F 1 "BS170" H 2200 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2150 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 1950 3750 50  0001 L CNN
+	1    1950 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 3750 2250 3750
+Wire Wire Line
+	2250 3750 2250 4150
+Wire Wire Line
+	2250 4150 2200 4150
+Wire Wire Line
+	1900 4150 1850 4150
+$Comp
+L Device:R_US R1
+U 1 1 5CB522C3
+P 2050 3450
+F 0 "R1" V 1950 3600 50  0000 R CNN
+F 1 "10k" V 1950 3450 50  0000 R CNN
+F 2 "" V 2090 3440 50  0001 C CNN
+F 3 "~" H 2050 3450 50  0001 C CNN
+	1    2050 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1850 3550 1850 3450
+Wire Wire Line
+	1850 3450 1900 3450
+Text GLabel 2350 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	2200 3450 2350 3450
+Wire Wire Line
+	2350 3450 2350 3500
+Text GLabel 2350 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	2250 3750 2350 3750
+Connection ~ 2250 3750
+Wire Wire Line
+	2350 3750 2350 3850
+$Comp
+L Device:R_US R4
+U 1 1 5CB55574
+P 2950 4150
+F 0 "R4" V 2850 4300 50  0000 R CNN
+F 1 "10k" V 2850 4100 50  0000 R CNN
+F 2 "" V 2990 4140 50  0001 C CNN
+F 3 "~" H 2950 4150 50  0001 C CNN
+	1    2950 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	2750 4150 2750 3950
+$Comp
+L Transistor_FET:BS170 Q2
+U 1 1 5CB5557C
+P 2850 3750
+F 0 "Q2" H 3100 3750 50  0000 C CNN
+F 1 "BS170" H 3100 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3050 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 2850 3750 50  0001 L CNN
+	1    2850 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3750 3150 3750
+Wire Wire Line
+	3150 3750 3150 4150
+Wire Wire Line
+	3150 4150 3100 4150
+Wire Wire Line
+	2800 4150 2750 4150
+$Comp
+L Device:R_US R3
+U 1 1 5CB55587
+P 2950 3450
+F 0 "R3" V 2850 3600 50  0000 R CNN
+F 1 "10k" V 2850 3450 50  0000 R CNN
+F 2 "" V 2990 3440 50  0001 C CNN
+F 3 "~" H 2950 3450 50  0001 C CNN
+	1    2950 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	2750 3550 2750 3450
+Wire Wire Line
+	2750 3450 2800 3450
+Text GLabel 3250 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	3100 3450 3250 3450
+Wire Wire Line
+	3250 3450 3250 3500
+Text GLabel 3250 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	3150 3750 3250 3750
+Connection ~ 3150 3750
+Wire Wire Line
+	3250 3750 3250 3850
+$Comp
+L Device:R_US R6
+U 1 1 5CB55885
+P 3850 4150
+F 0 "R6" V 3750 4300 50  0000 R CNN
+F 1 "10k" V 3750 4100 50  0000 R CNN
+F 2 "" V 3890 4140 50  0001 C CNN
+F 3 "~" H 3850 4150 50  0001 C CNN
+	1    3850 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	3650 4150 3650 3950
+$Comp
+L Transistor_FET:BS170 Q3
+U 1 1 5CB5588D
+P 3750 3750
+F 0 "Q3" H 4000 3750 50  0000 C CNN
+F 1 "BS170" H 4000 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 3950 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 3750 3750 50  0001 L CNN
+	1    3750 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3750 4050 3750
+Wire Wire Line
+	4050 3750 4050 4150
+Wire Wire Line
+	4050 4150 4000 4150
+Wire Wire Line
+	3700 4150 3650 4150
+$Comp
+L Device:R_US R5
+U 1 1 5CB55898
+P 3850 3450
+F 0 "R5" V 3750 3600 50  0000 R CNN
+F 1 "10k" V 3750 3450 50  0000 R CNN
+F 2 "" V 3890 3440 50  0001 C CNN
+F 3 "~" H 3850 3450 50  0001 C CNN
+	1    3850 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	3650 3550 3650 3450
+Wire Wire Line
+	3650 3450 3700 3450
+Text GLabel 4150 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	4000 3450 4150 3450
+Wire Wire Line
+	4150 3450 4150 3500
+Text GLabel 4150 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	4050 3750 4150 3750
+Connection ~ 4050 3750
+Wire Wire Line
+	4150 3750 4150 3850
+$Comp
+L Device:R_US R8
+U 1 1 5CB558A8
+P 4750 4150
+F 0 "R8" V 4650 4300 50  0000 R CNN
+F 1 "10k" V 4650 4100 50  0000 R CNN
+F 2 "" V 4790 4140 50  0001 C CNN
+F 3 "~" H 4750 4150 50  0001 C CNN
+	1    4750 4150
+	0    -1   1    0   
+$EndComp
+$Comp
+L Transistor_FET:BS170 Q4
+U 1 1 5CB558B0
+P 4650 3750
+F 0 "Q4" H 4900 3750 50  0000 C CNN
+F 1 "BS170" H 4900 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4850 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 4650 3750 50  0001 L CNN
+	1    4650 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 3750 4950 3750
+Wire Wire Line
+	4950 3750 4950 4150
+Wire Wire Line
+	4950 4150 4900 4150
+Wire Wire Line
+	4600 4150 4550 4150
+$Comp
+L Device:R_US R7
+U 1 1 5CB558BB
+P 4750 3450
+F 0 "R7" V 4650 3600 50  0000 R CNN
+F 1 "10k" V 4650 3450 50  0000 R CNN
+F 2 "" V 4790 3440 50  0001 C CNN
+F 3 "~" H 4750 3450 50  0001 C CNN
+	1    4750 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	4550 3450 4600 3450
+Text GLabel 5050 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	4900 3450 5050 3450
+Wire Wire Line
+	5050 3450 5050 3500
+Text GLabel 5050 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	4950 3750 5050 3750
+Connection ~ 4950 3750
+Wire Wire Line
+	5050 3750 5050 3850
+$Comp
+L Device:R_US R10
+U 1 1 5CB561C8
+P 5650 4150
+F 0 "R10" V 5550 4300 50  0000 R CNN
+F 1 "10k" V 5550 4100 50  0000 R CNN
+F 2 "" V 5690 4140 50  0001 C CNN
+F 3 "~" H 5650 4150 50  0001 C CNN
+	1    5650 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5450 4150 5450 3950
+$Comp
+L Transistor_FET:BS170 Q5
+U 1 1 5CB561D0
+P 5550 3750
+F 0 "Q5" H 5800 3750 50  0000 C CNN
+F 1 "BS170" H 5800 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 5750 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 5550 3750 50  0001 L CNN
+	1    5550 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 3750 5850 3750
+Wire Wire Line
+	5850 3750 5850 4150
+Wire Wire Line
+	5850 4150 5800 4150
+Wire Wire Line
+	5500 4150 5450 4150
+$Comp
+L Device:R_US R9
+U 1 1 5CB561DB
+P 5650 3450
+F 0 "R9" V 5550 3600 50  0000 R CNN
+F 1 "10k" V 5550 3450 50  0000 R CNN
+F 2 "" V 5690 3440 50  0001 C CNN
+F 3 "~" H 5650 3450 50  0001 C CNN
+	1    5650 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5450 3550 5450 3450
+Wire Wire Line
+	5450 3450 5500 3450
+Text GLabel 5950 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	5800 3450 5950 3450
+Wire Wire Line
+	5950 3450 5950 3500
+Text GLabel 5950 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	5850 3750 5950 3750
+Connection ~ 5850 3750
+Wire Wire Line
+	5950 3750 5950 3850
+$Comp
+L Device:R_US R12
+U 1 1 5CB561EB
+P 6550 4150
+F 0 "R12" V 6450 4300 50  0000 R CNN
+F 1 "10k" V 6450 4100 50  0000 R CNN
+F 2 "" V 6590 4140 50  0001 C CNN
+F 3 "~" H 6550 4150 50  0001 C CNN
+	1    6550 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6350 4150 6350 3950
+$Comp
+L Transistor_FET:BS170 Q6
+U 1 1 5CB561F3
+P 6450 3750
+F 0 "Q6" H 6700 3750 50  0000 C CNN
+F 1 "BS170" H 6700 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6650 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 6450 3750 50  0001 L CNN
+	1    6450 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3750 6750 3750
+Wire Wire Line
+	6750 3750 6750 4150
+Wire Wire Line
+	6750 4150 6700 4150
+Wire Wire Line
+	6400 4150 6350 4150
+$Comp
+L Device:R_US R11
+U 1 1 5CB561FE
+P 6550 3450
+F 0 "R11" V 6450 3600 50  0000 R CNN
+F 1 "10k" V 6450 3400 50  0000 R CNN
+F 2 "" V 6590 3440 50  0001 C CNN
+F 3 "~" H 6550 3450 50  0001 C CNN
+	1    6550 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6350 3550 6350 3450
+Wire Wire Line
+	6350 3450 6400 3450
+Text GLabel 6850 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	6700 3450 6850 3450
+Wire Wire Line
+	6850 3450 6850 3500
+Text GLabel 6850 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	6750 3750 6850 3750
+Connection ~ 6750 3750
+Wire Wire Line
+	6850 3750 6850 3850
+$Comp
+L Device:R_US R14
+U 1 1 5CB5620E
+P 7450 4150
+F 0 "R14" V 7350 4300 50  0000 R CNN
+F 1 "10k" V 7350 4100 50  0000 R CNN
+F 2 "" V 7490 4140 50  0001 C CNN
+F 3 "~" H 7450 4150 50  0001 C CNN
+	1    7450 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	7250 4150 7250 3950
+$Comp
+L Transistor_FET:BS170 Q7
+U 1 1 5CB56216
+P 7350 3750
+F 0 "Q7" H 7600 3750 50  0000 C CNN
+F 1 "BS170" H 7600 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7550 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 7350 3750 50  0001 L CNN
+	1    7350 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 3750 7650 3750
+Wire Wire Line
+	7650 3750 7650 4150
+Wire Wire Line
+	7650 4150 7600 4150
+Wire Wire Line
+	7300 4150 7250 4150
+$Comp
+L Device:R_US R13
+U 1 1 5CB56221
+P 7450 3450
+F 0 "R13" V 7350 3600 50  0000 R CNN
+F 1 "10k" V 7350 3400 50  0000 R CNN
+F 2 "" V 7490 3440 50  0001 C CNN
+F 3 "~" H 7450 3450 50  0001 C CNN
+	1    7450 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	7250 3550 7250 3450
+Wire Wire Line
+	7250 3450 7300 3450
+Text GLabel 7750 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	7600 3450 7750 3450
+Wire Wire Line
+	7750 3450 7750 3500
+Text GLabel 7750 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	7650 3750 7750 3750
+Connection ~ 7650 3750
+Wire Wire Line
+	7750 3750 7750 3850
+$Comp
+L Device:R_US R16
+U 1 1 5CB56231
+P 8350 4150
+F 0 "R16" V 8250 4300 50  0000 R CNN
+F 1 "10k" V 8250 4100 50  0000 R CNN
+F 2 "" V 8390 4140 50  0001 C CNN
+F 3 "~" H 8350 4150 50  0001 C CNN
+	1    8350 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	8150 4150 8150 3950
+$Comp
+L Transistor_FET:BS170 Q8
+U 1 1 5CB56239
+P 8250 3750
+F 0 "Q8" H 8500 3750 50  0000 C CNN
+F 1 "BS170" H 8500 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 8450 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 8250 3750 50  0001 L CNN
+	1    8250 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 3750 8550 3750
+Wire Wire Line
+	8550 3750 8550 4150
+Wire Wire Line
+	8550 4150 8500 4150
+Wire Wire Line
+	8200 4150 8150 4150
+$Comp
+L Device:R_US R15
+U 1 1 5CB56244
+P 8350 3450
+F 0 "R15" V 8250 3600 50  0000 R CNN
+F 1 "10k" V 8250 3400 50  0000 R CNN
+F 2 "" V 8390 3440 50  0001 C CNN
+F 3 "~" H 8350 3450 50  0001 C CNN
+	1    8350 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	8150 3550 8150 3450
+Wire Wire Line
+	8150 3450 8200 3450
+Text GLabel 8650 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	8500 3450 8650 3450
+Wire Wire Line
+	8650 3450 8650 3500
+Text GLabel 8650 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	8550 3750 8650 3750
+Connection ~ 8550 3750
+Wire Wire Line
+	8650 3750 8650 3850
+$Comp
+L Device:R_US R18
+U 1 1 5CB57B60
+P 9200 4150
+F 0 "R18" V 9100 4300 50  0000 R CNN
+F 1 "10k" V 9100 4100 50  0000 R CNN
+F 2 "" V 9240 4140 50  0001 C CNN
+F 3 "~" H 9200 4150 50  0001 C CNN
+	1    9200 4150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	9000 4150 9000 3950
+$Comp
+L Transistor_FET:BS170 Q9
+U 1 1 5CB57B68
+P 9100 3750
+F 0 "Q9" H 9350 3750 50  0000 C CNN
+F 1 "BS170" H 9350 3600 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 9300 3675 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/BS/BS170.pdf" H 9100 3750 50  0001 L CNN
+	1    9100 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 3750 9400 3750
+Wire Wire Line
+	9400 3750 9400 4150
+Wire Wire Line
+	9400 4150 9350 4150
+Wire Wire Line
+	9050 4150 9000 4150
+$Comp
+L Device:R_US R17
+U 1 1 5CB57B73
+P 9200 3450
+F 0 "R17" V 9100 3600 50  0000 R CNN
+F 1 "10k" V 9100 3400 50  0000 R CNN
+F 2 "" V 9240 3440 50  0001 C CNN
+F 3 "~" H 9200 3450 50  0001 C CNN
+	1    9200 3450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	9000 3550 9000 3450
+Wire Wire Line
+	9000 3450 9050 3450
+Text GLabel 9500 3500 3    50   UnSpc ~ 0
+5V
+Wire Wire Line
+	9350 3450 9500 3450
+Wire Wire Line
+	9500 3450 9500 3500
+Text GLabel 9500 3850 3    50   UnSpc ~ 0
+3.3V
+Wire Wire Line
+	9400 3750 9500 3750
+Connection ~ 9400 3750
+Wire Wire Line
+	9500 3750 9500 3850
+Text GLabel 1850 4400 3    50   Input ~ 0
+RPI_19
+Text GLabel 2750 4400 3    50   Input ~ 0
+RPI_18
+Text GLabel 3650 4400 3    50   Input ~ 0
+RPI_17
+Text GLabel 4550 4400 3    50   Input ~ 0
+RPI_16
+Text GLabel 5450 4400 3    50   Input ~ 0
+RPI_15
+Text GLabel 6350 4400 3    50   Input ~ 0
+RPI_14
+Text GLabel 7250 4400 3    50   Input ~ 0
+RPI_13
+Text GLabel 8150 4400 3    50   Input ~ 0
+RPI_12
+Text GLabel 9000 4400 3    50   Input ~ 0
+RPI_10
+Wire Wire Line
+	1850 4400 1850 4150
+Connection ~ 1850 4150
+Wire Wire Line
+	2750 4400 2750 4150
+Connection ~ 2750 4150
+Wire Wire Line
+	3650 4400 3650 4150
+Connection ~ 3650 4150
+Wire Wire Line
+	4550 3950 4550 4150
+Connection ~ 4550 4150
+Wire Wire Line
+	4550 4150 4550 4400
+Wire Wire Line
+	5450 4400 5450 4150
+Connection ~ 5450 4150
+Wire Wire Line
+	6350 4400 6350 4150
+Connection ~ 6350 4150
+Wire Wire Line
+	7250 4400 7250 4150
+Connection ~ 7250 4150
+Wire Wire Line
+	8150 4400 8150 4150
+Connection ~ 8150 4150
+Wire Wire Line
+	9000 4400 9000 4150
+Connection ~ 9000 4150
+Text GLabel 9900 4400 3    50   UnSpc ~ 0
+GND
+Text GLabel 1850 3200 1    50   Input ~ 0
+D7
+Text GLabel 2750 3200 1    50   Input ~ 0
+D6
+Text GLabel 3650 3200 1    50   Input ~ 0
+D5
+Text GLabel 4550 3200 1    50   Input ~ 0
+D4
+Text GLabel 5450 3200 1    50   Input ~ 0
+D3
+Text GLabel 6350 3200 1    50   Input ~ 0
+D2
+Text GLabel 7250 3200 1    50   Input ~ 0
+D1
+Text GLabel 8150 3200 1    50   Input ~ 0
+D0
+Text GLabel 9000 3200 1    50   Input ~ 0
+RPI_SEL
+Text GLabel 9900 3200 1    50   UnSpc ~ 0
+GND
+Wire Wire Line
+	9900 3200 9900 3750
+$Comp
+L power:GND #PWR?
+U 1 1 5CB7E2AF
+P 10200 3750
+F 0 "#PWR?" H 10200 3500 50  0001 C CNN
+F 1 "GND" H 10205 3577 50  0000 C CNN
+F 2 "" H 10200 3750 50  0001 C CNN
+F 3 "" H 10200 3750 50  0001 C CNN
+	1    10200 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10200 3750 9900 3750
+Connection ~ 9900 3750
+Wire Wire Line
+	9900 3750 9900 4400
+Wire Wire Line
+	1850 3200 1850 3450
+Connection ~ 1850 3450
+Wire Wire Line
+	2750 3200 2750 3450
+Connection ~ 2750 3450
+Wire Wire Line
+	3650 3200 3650 3450
+Connection ~ 3650 3450
+Wire Wire Line
+	4550 3200 4550 3450
+Connection ~ 4550 3450
+Wire Wire Line
+	4550 3450 4550 3550
+Wire Wire Line
+	5450 3200 5450 3450
+Connection ~ 5450 3450
+Wire Wire Line
+	6350 3200 6350 3450
+Connection ~ 6350 3450
+Wire Wire Line
+	7250 3200 7250 3450
+Connection ~ 7250 3450
+Wire Wire Line
+	8150 3200 8150 3450
+Connection ~ 8150 3450
+Wire Wire Line
+	9000 3200 9000 3450
+Connection ~ 9000 3450
+Text Notes 3950 5250 0    248  ~ 0
+Raspberry PI Side
+Text Notes 4850 2650 0    248  ~ 0
+Z80 Side
+$EndSCHEMATC
