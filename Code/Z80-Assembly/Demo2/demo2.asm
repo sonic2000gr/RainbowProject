@@ -1,5 +1,5 @@
 		ORG 0000H 	; Program Entry Point (BIOS Start)
-endram:	EQU 27FFH 	; Stack at end of RAM (dec 10239)
+endram:		EQU 27FFH 	; Stack at end of RAM (dec 10239)
 		LD SP, endram 	; Load Stack Pointer
 		JP start	; JP to main program (subs follow)
 disp:		LD A, (HL)	; Display sub for null terminated strings (LCD). A and HL affected
@@ -8,7 +8,7 @@ disp:		LD A, (HL)	; Display sub for null terminated strings (LCD). A and HL affe
 		OUT (01H),A	; Output to LCD
 		INC HL		; Move to next letter
 		JP disp		; Loop until word is printed
-disppi:	LD A, (HL)	; Same as disp but for RasPI
+disppi:		LD A, (HL)	; Same as disp but for RasPI
 		CP 127		; terminates by 127 instead of 0
 		RET Z
 		OUT (04H),A
@@ -18,6 +18,10 @@ delay:		NOP		; Execute nops for delay. Value in B.
 		DJNZ delay	; do while B!=0
 		RET
 
+kbd:		IN A, (00H)	; Read keyboard, store value in A
+		CP 255		; 255 means keyboard returned no char
+		JP Z, kbd	; Repeat until user presses a key
+		RET
 start:		LD A, 0E0H	; Clear LCD
 		OUT (01H), A
 		LD HL, lcdm	; Display Message
@@ -30,92 +34,125 @@ startquiz:	LD A, 0FBH   ; Show TI Screen
 		
 		LD HL, q1	; send bytes to PI for quiz
 		call disppi	
+		call kbd
+		cp 50
+		jp nz, wa1
+		ld HL, correct
+		JP ea1
+wa1:		Ld HL, wrong
+ea1:		call disppi
 		LD B,10
 		call delay
-		LD HL, q1a
-		call disppi
-		LD B, 10
-		call delay
-
+				
 		LD HL, q2	; send bytes to PI for quiz
 		call disppi	
+		call kbd
+		cp 51
+		jp nz, wa2
+		ld HL, correct
+		JP ea2
+wa2:		Ld HL, wrong
+ea2:		call disppi
 		LD B,10
-		call delay
-		LD HL, q2a
-		call disppi
-		LD B, 10
 		call delay
 
+		
 		LD HL, q3	; send bytes to PI for quiz
 		call disppi	
+		call kbd
+		cp 49
+		jp nz, wa3
+		ld HL, correct
+		JP ea3
+wa3:		Ld HL, wrong
+ea3:		call disppi
 		LD B,10
-		call delay
-		LD HL, q3a
-		call disppi
-		LD B, 10
 		call delay
 
 		LD HL, q4	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q4a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 51
+		jp nz, wa4
+		ld HL, correct
+		JP ea4
+wa4:		Ld HL, wrong
+ea4:		call disppi
+		LD B,10
 		call delay
 
+
 		LD HL, q5	; send bytes to PI for quiz
-		call disppi	
+		call disppi
+		call kbd	
+		cp 50
+		jp nz, wa5
+		ld HL, correct
+		JP ea5
+wa5:		Ld HL, wrong
+ea5:		call disppi
 		LD B,10
 		call delay
-		LD HL, q5a
-		call disppi
-		LD B, 10
-		call delay
+
 		
 		LD HL, q6	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q6a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 52 
+		jp nz, wa6
+		ld HL, correct
+		JP ea6
+wa6:		Ld HL, wrong
+ea6:		call disppi
+		LD B,10
 		call delay
 
 		LD HL, q7	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q7a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 50
+		jp nz, wa7
+		ld HL, correct
+		JP ea7
+wa7:		Ld HL, wrong
+ea7:		call disppi
+		LD B,10
 		call delay
 
 		LD HL, q8	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q8a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 51
+		jp nz, wa8
+		ld HL, correct
+		JP ea8
+wa8:		Ld HL, wrong
+ea8:		call disppi
+		LD B,10
 		call delay
 
 		LD HL, q9	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q9a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 49
+		jp nz, wa9
+		ld HL, correct
+		JP ea9
+wa9:		Ld HL, wrong
+ea9:		call disppi
+		LD B,10
 		call delay
 
 		LD HL, q10	; send bytes to PI for quiz
-		call disppi	
-		LD B,10
-		call delay
-		LD HL, q10a
 		call disppi
-		LD B, 10
+		call kbd	
+		cp 52
+		jp nz, wa10
+		ld HL, correct
+		JP ea10
+wa10:		Ld HL, wrong
+ea10:		call disppi
+		LD B,10
 		call delay
 
 		JP startquiz
@@ -332,4 +369,11 @@ q10:		DEFB 0FEH		; clear screen
 		DEFB 07FH
 q10a:		DEFB 0FDH, 05H, 0FH
 		DEFB "Correct: 4"
-		DEFB 07FH	
+		DEFB 07FH
+correct:	DEFB 0FDH, 05H, 0FH
+		DEFB "Correct!"
+		DEFB 07FH
+wrong:		DEFB 0FDH, 05H, 0FH
+		DEFB "Wrong!!!"
+		DEFB 07FH
+			

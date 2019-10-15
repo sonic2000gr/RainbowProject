@@ -1,6 +1,7 @@
 #include <Key.h>
 #include <Keypad.h>
 #define MAX_ITEMS 10
+#define Z80
 
 void enqueue(int);
 int dequeue(void);
@@ -76,7 +77,7 @@ byte colPins[COLS] = { 12, 11, 10, 9 };
 
 // Create the Keypad
 Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
-
+char key2;
 //#define ledpin 13
 
 void setup()
@@ -86,6 +87,7 @@ void setup()
   pinMode (13, OUTPUT); // BUFFFER FULL
   #ifndef Z80
   Serial.begin(9600);
+  Serial.println("Keyboard start");
   #endif
 }
 
@@ -93,8 +95,13 @@ void loop()
 {
   char key = kpd.getKey();
   
-  if(key)
-    enqueue(key); 
+  if(key) {
+    enqueue(key);
+    #ifndef Z80
+    Serial.print("Incoming:");
+    Serial.println(key);
+    #endif
+  } 
   
   if (is_full())
     digitalWrite(13, HIGH);
@@ -103,24 +110,29 @@ void loop()
   
   if(digitalRead(3) == LOW && digitalRead(4) == LOW ) { // KBD_SEL & RD LOW
     if(!is_empty() && !sent)  {
-      char key2 = dequeue();
+      key2 = dequeue();
       #ifndef Z80
+      Serial.print("Sending:");
       Serial.println(key2);
       #endif
-      DDRC = B11111111;
-      PORTC = key2;
+      DDRF = B11111111;
+      PORTF = key2;
       sent = 1;
       #ifndef Z80
-        delay(10);
+        delay(1000);
       #endif 
-    } else {
-      DDRC = B11111111;
-      PORTC = 255;
+    }
+    if (sent) {
+      DDRF = B11111111;
+      PORTF = key2;
       sent = 1;
+    } else if (is_empty()) {
+      DDRF = B11111111;
+      PORTF = 255;
     }
   } else {
-      PORTC = 0;
-      DDRC = B00000000;
+      PORTF = 0;
+      DDRF = B00000000;
       sent = 0;
   }
 }                                                                                                                                                                              
